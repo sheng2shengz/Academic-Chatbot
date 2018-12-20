@@ -45,12 +45,12 @@
                 <asp:Label ID="Role_Label" runat="server">Role</asp:Label>
                 <asp:DropDownList ID="Role_DropDownList" CssClass="form-control" runat="server">
                     <asp:ListItem Value="Admin">Admin</asp:ListItem>
-                    <asp:ListItem Value="FYP Coordinator">FYP Coordinator</asp:ListItem>
-                    <asp:ListItem Value="Li Coordinator">Li Coordinator</asp:ListItem>
+                    <asp:ListItem Value="FYP_Coordinator">FYP Coordinator</asp:ListItem>
+                    <asp:ListItem Value="Li_Coordinator">LI Coordinator</asp:ListItem>
                 </asp:DropDownList>
             </div>
             <br />
-            <asp:Button ID="Submit_Button" CssClass="col-4 btn btn-primary btn-lg" Text="Submit" runat="server" />
+            <asp:Button ID="Submit_Button" CssClass="col-4 btn btn-primary btn-lg" Text="Submit" OnClick="Submit_Button_OnClick" runat="server" />
         </div>
     </div>
 </asp:Content>
