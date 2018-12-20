@@ -1,4 +1,4 @@
-﻿<%@ Page Title="New User" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="NewUser.aspx.cs" Inherits="Academic_Chatbot.About" %>
+﻿<%@ Page Title="New User" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="True" CodeBehind="NewUser.aspx.cs" Inherits="Academic_Chatbot.NewUser" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
@@ -44,9 +44,9 @@
             <div class="mb-3">
                 <asp:Label ID="Role_Label" runat="server">Role</asp:Label>
                 <asp:DropDownList ID="Role_DropDownList" CssClass="form-control" runat="server">
-                    <asp:ListItem Value="Admin">Admin</asp:ListItem>
-                    <asp:ListItem Value="FYP_Coordinator">FYP Coordinator</asp:ListItem>
-                    <asp:ListItem Value="Li_Coordinator">LI Coordinator</asp:ListItem>
+                    <asp:ListItem Value="1">Admin</asp:ListItem>
+                    <asp:ListItem Value="2">FYP Coordinator</asp:ListItem>
+                    <asp:ListItem Value="3">LI Coordinator</asp:ListItem>
                 </asp:DropDownList>
             </div>
             <br />

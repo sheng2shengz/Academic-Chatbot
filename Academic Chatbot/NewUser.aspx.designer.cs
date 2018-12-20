@@ -10,7 +10,7 @@
 namespace Academic_Chatbot {
     
     
-    public partial class About {
+    public partial class NewUser {
         
         /// <summary>
         /// User_Image control.
