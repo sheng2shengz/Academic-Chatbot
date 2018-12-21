@@ -122,6 +122,7 @@
     <Content Include="Dashboard.aspx" />
     <Content Include="Image\AddUser.png" />
     <Content Include="Image\announcement.png" />
+    <Content Include="Image\back.png" />
     <Content Include="Image\dashboard.png" />
     <Content Include="Image\management.svg">
       <SubType>Designer</SubType>

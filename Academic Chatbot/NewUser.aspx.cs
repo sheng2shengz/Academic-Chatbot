@@ -16,6 +16,11 @@ namespace Academic_Chatbot
             
         }
 
+        protected void back_ImageButton_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Accounts.aspx");
+        }
+
         public string ConnectionString = WebConfigurationManager.ConnectionStrings["academic_chatbotConnectionString"].ConnectionString;
 
          protected void Submit_Button_OnClick(object sender, EventArgs e)

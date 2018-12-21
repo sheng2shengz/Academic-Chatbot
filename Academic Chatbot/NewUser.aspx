@@ -2,6 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
+        <asp:ImageButton ID="back_ImageButton" CssClass="" Height="40" Width="40" ImageUrl="~/Image/back.png" OnClick="back_ImageButton_OnClick" CausesValidation="False" runat="server" />
         <div class="py-5 text-center">
             <asp:Image ID="User_Image" CssClass="d-block mx-auto mb-4" Width="80" Height="80" ImageUrl="~/Image/user1.png" runat="server" />
             <h2>Create User</h2>
