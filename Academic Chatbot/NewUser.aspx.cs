@@ -19,24 +19,21 @@ namespace Academic_Chatbot
         public string ConnectionString = WebConfigurationManager.ConnectionStrings["academic_chatbotConnectionString"].ConnectionString;
 
          protected void Submit_Button_OnClick(object sender, EventArgs e)
-        {
-            if (Password_TextBox.Text == ConfirmPassword_TextBox.Text)
-            {
-                Encryption encrypt = new Encryption();
-                string EncryptedPassword = encrypt.MD5Encrypt(ConfirmPassword_TextBox.Text);
-                User user = new User();
-                user.Title = Title_DropDownList.SelectedValue;
-                user.FirstName = FirstName_TextBox.Text;
-                user.LastName = LastName_TextBox.Text;
-                user.EmailAddress = Email_TextBox.Text;
-                user.Passwordhash = EncryptedPassword;
-                user.Role = Role_DropDownList.SelectedValue;
-                user.CreatedDate = DateTime.Today.ToString("dd/MM/yyyy");
+         {
+            Encryption encrypt       = new Encryption();
+            string EncryptedPassword = encrypt.MD5Encrypt(ConfirmPassword_TextBox.Text);
+            User user                = new User();
+            user.Title               = Title_DropDownList.SelectedValue;
+            user.FirstName           = FirstName_TextBox.Text;
+            user.LastName            = LastName_TextBox.Text;
+            user.EmailAddress        = Email_TextBox.Text;
+            user.Passwordhash        = EncryptedPassword;
+            user.Role                = Role_DropDownList.SelectedValue;
+            user.CreatedDate         = DateTime.Today.ToString("dd/MM/yyyy");
 
-                user.New_User(ConnectionString, user);
+            user.New_User(ConnectionString, user);
 
-                Response.Redirect("Accounts.aspx");
-            }
-        }
+            Response.Redirect("Accounts.aspx");
+         }
     }
 }

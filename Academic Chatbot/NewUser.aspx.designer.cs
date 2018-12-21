@@ -40,6 +40,15 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.DropDownList Title_DropDownList;
         
         /// <summary>
+        /// Title_DropDownList_RequiredValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Title_DropDownList_RequiredValidator;
+        
+        /// <summary>
         /// FirstName_Label control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace Academic_Chatbot {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox FirstName_TextBox;
+        
+        /// <summary>
+        /// FirstName_RequiredValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator FirstName_RequiredValidator;
         
         /// <summary>
         /// LastName_Label control.
@@ -76,6 +94,15 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.TextBox LastName_TextBox;
         
         /// <summary>
+        /// LastName_RequiredValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator LastName_RequiredValidator;
+        
+        /// <summary>
         /// Email_Label control.
         /// </summary>
         /// <remarks>
@@ -92,6 +119,24 @@ namespace Academic_Chatbot {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Email_TextBox;
+        
+        /// <summary>
+        /// Email_RequiredValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Email_RequiredValidator;
+        
+        /// <summary>
+        /// Email_RegExValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator Email_RegExValidator;
         
         /// <summary>
         /// Password_Label control.
@@ -112,6 +157,15 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.TextBox Password_TextBox;
         
         /// <summary>
+        /// Password_RequiredValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Password_RequiredValidator;
+        
+        /// <summary>
         /// ConfirmPassword_Label control.
         /// </summary>
         /// <remarks>
@@ -130,6 +184,33 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.TextBox ConfirmPassword_TextBox;
         
         /// <summary>
+        /// ConfirmPassword_RequiredValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ConfirmPassword_RequiredValidator;
+        
+        /// <summary>
+        /// PasswordConfirmPassword_CompareValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator PasswordConfirmPassword_CompareValidator;
+        
+        /// <summary>
+        /// PasswordConfirmPassword_CompareValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator PasswordConfirmPassword_CompareValidator1;
+        
+        /// <summary>
         /// Role_Label control.
         /// </summary>
         /// <remarks>
@@ -146,6 +227,15 @@ namespace Academic_Chatbot {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList Role_DropDownList;
+        
+        /// <summary>
+        /// Role_DropDownList_RequiredValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Role_DropDownList_RequiredValidator;
         
         /// <summary>
         /// Submit_Button control.
