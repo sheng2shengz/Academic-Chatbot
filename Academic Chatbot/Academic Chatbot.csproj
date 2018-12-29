@@ -121,11 +121,13 @@
     <Content Include="ChatLog.aspx" />
     <Content Include="Content\chatbot.css" />
     <Content Include="Dashboard.aspx" />
+    <Content Include="Image\add.png" />
     <Content Include="Image\AddUser.png" />
     <Content Include="Image\announcement.png" />
     <Content Include="Image\back.png" />
     <Content Include="Image\book.png" />
     <Content Include="Image\dashboard.png" />
+    <Content Include="Image\delete.png" />
     <Content Include="Image\management.svg">
       <SubType>Designer</SubType>
     </Content>
@@ -153,6 +155,8 @@
     <Content Include="Image\AcabotLogo.png" />
     <Content Include="Image\User.png" />
     <Content Include="Announcement.aspx" />
+    <Content Include="QnADeleteEntry.aspx" />
+    <Content Include="QnANewEntry.aspx" />
     <Content Include="Reminder.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -310,6 +314,20 @@
     </Compile>
     <Compile Include="Announcement.aspx.designer.cs">
       <DependentUpon>Announcement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QnADeleteEntry.aspx.cs">
+      <DependentUpon>QnADeleteEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QnADeleteEntry.aspx.designer.cs">
+      <DependentUpon>QnADeleteEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QnANewEntry.aspx.cs">
+      <DependentUpon>QnANewEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QnANewEntry.aspx.designer.cs">
+      <DependentUpon>QnANewEntry.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reminder.aspx.cs">
       <DependentUpon>Reminder.aspx</DependentUpon>

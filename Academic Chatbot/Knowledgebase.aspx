@@ -76,8 +76,8 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body mx-auto">
-                        <asp:Button Text="Add Entry" CssClass=" btn btn-success" runat="server" />
-                        <asp:Button Text="Delete Entry" CssClass=" btn btn-danger" runat="server" />
+                        <asp:Button Text="Add Entry" CssClass=" btn btn-success" OnClick="Unnamed_Click" runat="server" />
+                        <asp:Button Text="Delete Entry" CssClass=" btn btn-danger" OnClick="Unnamed_Click1" runat="server" />
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>

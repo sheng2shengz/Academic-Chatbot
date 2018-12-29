@@ -24,5 +24,15 @@ namespace Academic_Chatbot
         {
             Response.Redirect("ChatLog.aspx");
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("QnANewEntry.aspx");
+        }
+
+        protected void Unnamed_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("QnADeleteEntry.aspx");
+        }
     }
 }
