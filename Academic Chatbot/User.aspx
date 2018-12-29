@@ -1,4 +1,4 @@
-﻿<%@ Page Title="User Management" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Accounts.aspx.cs" Inherits="Academic_Chatbot.Accounts" %>
+﻿<%@ Page Title="User Management" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="User.aspx.cs" Inherits="Academic_Chatbot.Accounts" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="pb-3 text-center">
@@ -21,54 +21,71 @@
             </div>
         </div>
         <div class="m-3">
-            <table class="table table-striped table-sm">
+            <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>Role</th>
-                  <th>Email Address</th>
-                  <th>Title</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Created Date</th>
+                    <th>#</th>
+                    <th>Role</th>
+                    <th>Email Address</th>
+                    <th>Title</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Created Date</th>
+                    <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td>
+                    <th>1</th>
                     <td>Admin</td>
                     <td>asdfasba@gmail.com</td>
-                  <td>Mr</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>11.1.2017</td>
+                    <td>Mr</td>
+                    <td>ipsum</td>
+                    <td>dolor</td>
+                    <td>11.1.2017</td>
+                    <td>
+                        <asp:LinkButton ID="Edit_LinkButton" Text="Edit" CssClass="mr-1" Font-Underline="true" runat="server"></asp:LinkButton>
+                        <asp:LinkButton ID="Delete_LinkButton" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
+                    </td>
                 </tr>
                 <tr>
-                  <td>2</td>
+                  <th>2</th>
                     <td>FYP Coordinator</td>
                     <td>iuogndg@gmail.com</td>
                   <td>Dr</td>
                   <td>consectetur</td>
                   <td>adipiscing</td>
                   <td>12.06.2017</td>
+                    <td>
+                        <asp:LinkButton ID="LinkButton1" Text="Edit" CssClass="mr-1" Font-Underline="true" runat="server"></asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton2" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
+                    </td>
                 </tr>
                 <tr>
-                  <td>3</td>
+                  <th>3</th>
                     <td>LI Coordinator</td>
                     <td>ppedmx@gmail.com</td>
                   <td>Miss</td>
                   <td>nec</td>
                   <td>odio</td>
                   <td>30.5.2017</td>
+                    <td>
+                        <asp:LinkButton ID="LinkButton3" Text="Edit" CssClass="mr-1" Font-Underline="true" runat="server"></asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton4" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
+                    </td>
                 </tr>
                 <tr>
-                  <td>4</td>
+                  <th>4</th>
                     <td>Admin</td>
                     <td>123ghis@gmail.com</td>
                   <td>Mrs</td>
                   <td>Sed</td>
                   <td>cursus</td>
                   <td>23.4.2017</td>
+                    <td>
+                        <asp:LinkButton ID="LinkButton5" Text="Edit" CssClass="mr-1" Font-Underline="true" runat="server"></asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton6" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
+                    </td>
                 </tr>
               </tbody>
             </table>

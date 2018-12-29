@@ -117,7 +117,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Accounts.aspx" />
+    <Content Include="User.aspx" />
     <Content Include="ChatLog.aspx" />
     <Content Include="Content\chatbot.css" />
     <Content Include="Dashboard.aspx" />
@@ -224,12 +224,12 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accounts.aspx.cs">
-      <DependentUpon>Accounts.aspx</DependentUpon>
+    <Compile Include="User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Accounts.aspx.designer.cs">
-      <DependentUpon>Accounts.aspx</DependentUpon>
+    <Compile Include="User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChatLog.aspx.cs">
       <DependentUpon>ChatLog.aspx</DependentUpon>
