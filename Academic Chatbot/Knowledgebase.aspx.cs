@@ -19,5 +19,10 @@ namespace Academic_Chatbot
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
             upModal.Update();
         }
+
+        protected void ChatLog_Button_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ChatLog.aspx");
+        }
     }
 }

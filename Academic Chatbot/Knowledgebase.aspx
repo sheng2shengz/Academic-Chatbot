@@ -9,7 +9,7 @@
         <div class="mx-5 row justify-content-between">
             <asp:Button ID="NewKB_Button" CssClass="btn btn-primary" Text="New KB" runat="server" />
             <asp:Button ID="TrainPublish_Button" CssClass="btn btn-primary" Text="Train & Publish" runat="server" />
-            <asp:Button ID="ChatLog_Button" CssClass="btn btn-primary" Text="Chat Log" runat="server" />
+            <asp:Button ID="ChatLog_Button" CssClass="btn btn-primary" Text="Chat Log" OnClick="ChatLog_Button_Click" runat="server" />
         </div>
     </div>
     <hr />
