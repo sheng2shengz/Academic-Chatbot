@@ -13,5 +13,11 @@ namespace Academic_Chatbot
         {
 
         }
+
+        protected void Edit_LinkButton_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+            upModal.Update();
+        }
     }
 }

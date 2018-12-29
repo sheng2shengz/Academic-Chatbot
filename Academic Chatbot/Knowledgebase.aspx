@@ -36,7 +36,7 @@
                         <td>5/5/2018</td>
                         <td>2/2/2018</td>
                         <td>
-                            <asp:LinkButton ID="Edit_LinkButton" Text="Edit" CssClass="mr-1" Font-Underline="true" runat="server"></asp:LinkButton>
+                            <asp:LinkButton ID="Edit_LinkButton" Text="Edit" CssClass="mr-1" Font-Underline="true" OnClick="Edit_LinkButton_Click" runat="server"></asp:LinkButton>
                             <asp:LinkButton ID="Delete_LinkButton" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
                         </td>
                     </tr>
@@ -64,4 +64,27 @@
             </table>
         </div>
     </div>
+
+    <!-- Bootstrap Modal Dialog -->
+    <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <asp:UpdatePanel ID="upModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><asp:Label ID="lblModalTitle" runat="server" Text="Cohort 2016 FYP KB"></asp:Label></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body mx-auto">
+                        <asp:Button Text="Add Entry" CssClass=" btn btn-success" runat="server" />
+                        <asp:Button Text="Delete Entry" CssClass=" btn btn-danger" runat="server" />
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+</div>
 </asp:Content>
