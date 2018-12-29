@@ -13,5 +13,15 @@ namespace Academic_Chatbot
         {
 
         }
+
+        protected void Edit_LinkButton_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("UpdateUser.aspx");
+        }
+
+        protected void CreateUser_Button_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("NewUser.aspx");
+        }
     }
 }

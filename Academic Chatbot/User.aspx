@@ -7,7 +7,7 @@
         </div>
         <div class="jumbotron shadow row justify-content-md-center m-3 p-3">
             <div class="col align-self-center col-lg-1 text-center" style="cursor:pointer">
-                <asp:ImageButton ID="CreateUser_Button" CssClass="row rounded-circle btn btn-light shadow-lg p-1" BorderColor="Black" BorderWidth="2px" ToolTip="Create User" ImageUrl="~/Image/users.png" Width="75" Height="75" runat="server" />  
+                <asp:ImageButton ID="CreateUser_Button" CssClass="row rounded-circle btn btn-light shadow-lg p-1" BorderColor="Black" BorderWidth="2px" ToolTip="Create User" ImageUrl="~/Image/users.png" Width="75" Height="75" OnClick="CreateUser_Button_OnClick" runat="server" />  
                 <asp:Label ID="CreateUser_Label" CssClass="row h7 text-center font-weight-light" runat="server">Create User</asp:Label>                
             </div>
             <div class="col align-self-center col-lg-2 mx-3 text-center">
@@ -44,7 +44,7 @@
                     <td>dolor</td>
                     <td>11.1.2017</td>
                     <td>
-                        <asp:LinkButton ID="Edit_LinkButton" Text="Edit" CssClass="mr-1" Font-Underline="true" runat="server"></asp:LinkButton>
+                        <asp:LinkButton ID="Edit_LinkButton" Text="Edit" CssClass="mr-1" Font-Underline="true" OnClick="Edit_LinkButton_OnClick" runat="server"></asp:LinkButton>
                         <asp:LinkButton ID="Delete_LinkButton" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
                     </td>
                 </tr>
