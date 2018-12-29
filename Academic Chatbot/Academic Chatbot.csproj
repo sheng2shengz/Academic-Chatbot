@@ -117,6 +117,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Image\student.png" />
+    <Content Include="Student.aspx" />
     <Content Include="UpdateUser.aspx" />
     <Content Include="User.aspx" />
     <Content Include="ChatLog.aspx" />
@@ -224,6 +226,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Student.aspx.cs">
+      <DependentUpon>Student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student.aspx.designer.cs">
+      <DependentUpon>Student.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UpdateUser.aspx.cs">
       <DependentUpon>UpdateUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
