@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="ChatLog.aspx.cs" Inherits="Academic_Chatbot.ChatLog" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-        <asp:ImageButton ID="back_ImageButton" Height="40" Width="40" ImageUrl="~/Image/back.png" CausesValidation="False" runat="server" />
+        <asp:ImageButton ID="back_ImageButton" Height="40" Width="40" ImageUrl="~/Image/back.png" OnClick="back_ImageButton_Click" runat="server" />
         <div class="pb-3 text-center">
             <asp:Image ID="ChatLog_Image" CssClass="d-block mx-auto mb-4" Width="100" Height="100" ImageUrl="~/Image/service.png" runat="server" />
             <h2>Chat Log</h2>

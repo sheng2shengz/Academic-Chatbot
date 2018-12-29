@@ -13,5 +13,10 @@ namespace Academic_Chatbot
         {
 
         }
+
+        protected void back_ImageButton_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Knowledgebase.aspx");
+        }
     }
 }
