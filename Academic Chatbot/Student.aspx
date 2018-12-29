@@ -8,7 +8,7 @@
         <hr />
         <div class="jumbotron shadow row justify-content-md-center mx-3 p-3">
             <div class="col align-self-center row justify-content-center ">
-                <asp:Button ID="AddStudent_Button" CssClass=" btn btn-light" BorderColor="Black" Text="Add Student" runat="server" />
+                <asp:Button ID="AddStudent_Button" CssClass=" btn btn-light" BorderColor="Black" Text="Add Student" OnClick="AddStudent_Button_Click" runat="server" />
             </div>
             <div class="col align-self-center">
                 <asp:Label CssClass="row justify-content-center" Text="Total Students:<b>45</b>" runat="server"></asp:Label>

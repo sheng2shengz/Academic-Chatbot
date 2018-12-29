@@ -25,5 +25,10 @@ namespace Academic_Chatbot
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal2", "$('#myModal2').modal();", true);
             upModal.Update();
         }
+
+        protected void AddStudent_Button_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("NewStudent.aspx");
+        }
     }
 }
