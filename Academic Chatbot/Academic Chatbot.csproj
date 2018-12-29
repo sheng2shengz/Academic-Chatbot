@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Accounts.aspx" />
+    <Content Include="ChatLog.aspx" />
     <Content Include="Content\chatbot.css" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Image\AddUser.png" />
@@ -130,6 +131,7 @@
     </Content>
     <Content Include="Image\Password1.png" />
     <Content Include="Image\reminder.png" />
+    <Content Include="Image\service.png" />
     <Content Include="Image\user1.png" />
     <Content Include="Image\UserManagementBW.png" />
     <Content Include="Image\UserManagement.png" />
@@ -224,6 +226,13 @@
     </Compile>
     <Compile Include="Accounts.aspx.designer.cs">
       <DependentUpon>Accounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChatLog.aspx.cs">
+      <DependentUpon>ChatLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChatLog.aspx.designer.cs">
+      <DependentUpon>ChatLog.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
