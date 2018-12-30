@@ -58,27 +58,27 @@
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">
+                                <a class="nav-link active" href="Dashboard.aspx">
                                   <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-home" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" height="24"><path d="M 3 9 l 9 -7 l 9 7 v 11 a 2 2 0 0 1 -2 2 H 5 a 2 2 0 0 1 -2 -2 Z" /><polyline points="9,22 9,12 15,12 15,22" /></svg>
                                   Dashboard <span class="sr-only">(current)</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="Reminder.aspx">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-file" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" height="24"><path d="M 13 2 H 6 a 2 2 0 0 0 -2 2 v 16 a 2 2 0 0 0 2 2 h 12 a 2 2 0 0 0 2 -2 V 9 Z" /><polyline points="13,2 13,9 20,9" /></svg>
                                 Reminder
                             </a>    
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="Announcement.aspx">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-shopping-cart" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" height="24"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M 1 1 h 4 l 2.68 13.39 a 2 2 0 0 0 2 1.61 h 9.72 a 2 2 0 0 0 2 -1.61 L 23 6 H 6" /></svg>
                                     Announcements
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="Knowledgebase.aspx">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-users" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" height="24"><path d="M 17 21 v -2 a 4 4 0 0 0 -4 -4 H 5 a 4 4 0 0 0 -4 4 v 2" /><circle cx="9" cy="7" r="4" /><path d="M 23 21 v -2 a 4 4 0 0 0 -3 -3.87" /><path d="M 16 3.13 a 4 4 0 0 1 0 7.75" /></svg>
-                                    Dialogs
+                                    Knowledgebase
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -88,13 +88,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="Student.aspx">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-users" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" height="24"><path d="M 17 21 v -2 a 4 4 0 0 0 -4 -4 H 5 a 4 4 0 0 0 -4 4 v 2" /><circle cx="9" cy="7" r="4" /><path d="M 23 21 v -2 a 4 4 0 0 0 -3 -3.87" /><path d="M 16 3.13 a 4 4 0 0 1 0 7.75" /></svg>
                                     Student List
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Accounts.aspx">
+                                <a class="nav-link" href="User.aspx">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-users" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" height="24"><path d="M 17 21 v -2 a 4 4 0 0 0 -4 -4 H 5 a 4 4 0 0 0 -4 4 v 2" /><circle cx="9" cy="7" r="4" /><path d="M 23 21 v -2 a 4 4 0 0 0 -3 -3.87" /><path d="M 16 3.13 a 4 4 0 0 1 0 7.75" /></svg>
                                     Users
                                 </a>
