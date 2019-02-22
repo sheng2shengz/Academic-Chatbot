@@ -29,4 +29,52 @@
     <div class="container">
         <asp:Label ID="listofannouncement_label" CssClass="h4" runat="server">List of Announcement</asp:Label>
     </div>
+
+    <div class="m-3">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email Address</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>BI15110234</td>
+                    <td>asdfasba@gmail.com</td>
+                    <td>Ipsum Dolor</td>
+                    <td>HC 05</td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BI15113561</td>
+                    <td>iuogndg@gmail.com</td>
+                    <td>Consectetur adipiscing</td>
+                    <td>HC 00</td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BI15120122</td>
+                    <td>ppedmx@gmail.com</td>
+                    <td>Necodio</td>
+                    <td>HC 05</td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BI15111234</td>
+                    <td>123ghis@gmail.com</td>
+                    <td>Sed Cursus</td>
+                    <td>HC 05</td>
+                    <td>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
 </asp:Content>

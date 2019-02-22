@@ -71,16 +71,16 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['Type', 'No.'],
+          ['1',     11],
+          ['2',      2],
+          ['3',  2],
+          ['4', 2],
+          ['5',    7]
         ]);
 
         var options = {
-          title: 'My Daily Activities'
+          title: 'Pie Chart'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));

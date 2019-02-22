@@ -38,7 +38,7 @@ namespace Academic_Chatbot
 
             user.New_User(ConnectionString, user);
 
-            Response.Redirect("Accounts.aspx");
+            Response.Redirect("User.aspx");
          }
     }
 }
