@@ -66,6 +66,27 @@
         </div>
     </div>
 
+    <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <asp:UpdatePanel ID="upModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="modal-content">
+                        <div class="modal-header ">
+                            <h4 class="modal-title mx-auto"><asp:Label ID="lblModalTitle" runat="server" Text="User Submitted!"></asp:Label></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body text-center mx-auto">
+                            <div class="row mb-4">
+                                <asp:Label Text="User has been saved in the database." runat="server"></asp:Label>
+                            </div>
+                            <asp:Label Text="Redirecting in 3 seconds. . ." runat="server"></asp:Label>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+
     <script type="text/javascript">
 
         //set the interval for checking the validators

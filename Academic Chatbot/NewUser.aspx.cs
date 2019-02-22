@@ -38,7 +38,10 @@ namespace Academic_Chatbot
 
             user.New_User(ConnectionString, user);
 
-            Response.Redirect("User.aspx");
-         }
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+            upModal.Update();
+
+            Response.AddHeader("REFRESH", "3;URL=User.aspx");
+        }
     }
 }
