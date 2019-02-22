@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="pb-3 text-center">
-            <asp:Image ID="Dashboard_Image" CssClass="d-block mx-auto mb-4" Width="100" Height="100" ImageUrl="~/Image/Dashboard.png" runat="server" />
+            <asp:Image ID="Dashboard_Image" CssClass="d-block mx-auto mb-4" Width="100" Height="100" ImageUrl="~/Images/Dashboard.png" runat="server" />
             <h2>Dashboard</h2>
         </div>
         <hr />

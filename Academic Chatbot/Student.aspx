@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class=" text-center">
-            <asp:Image ID="Student_Image" CssClass="d-block mx-auto mb-4" Width="100" Height="100" ImageUrl="~/Image/student.png" runat="server" />
+            <asp:Image ID="Student_Image" CssClass="d-block mx-auto mb-4" Width="100" Height="100" ImageUrl="~/Images/student.png" runat="server" />
             <h2>Student List</h2>
         </div>
         <hr />

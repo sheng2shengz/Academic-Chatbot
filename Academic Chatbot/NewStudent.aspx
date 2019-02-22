@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="NewStudent.aspx.cs" Inherits="Academic_Chatbot.NewStudent" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-        <asp:ImageButton ID="back_ImageButton" CssClass="" Height="40" Width="40" ImageUrl="~/Image/back.png" OnClick="back_ImageButton_OnClick" CausesValidation="False" runat="server" />
+        <asp:ImageButton ID="back_ImageButton" CssClass="" Height="40" Width="40" ImageUrl="~/Images/back.png" OnClick="back_ImageButton_OnClick" CausesValidation="False" runat="server" />
         <div class="py-5 text-center">
-            <asp:Image ID="Cap_Image" CssClass="d-block mx-auto mb-4" Width="80" Height="80" ImageUrl="~/Image/cap.png" runat="server" />
+            <asp:Image ID="Cap_Image" CssClass="d-block mx-auto mb-4" Width="80" Height="80" ImageUrl="~/Images/cap.png" runat="server" />
             <h2>New Student</h2>
         </div>
         <hr />

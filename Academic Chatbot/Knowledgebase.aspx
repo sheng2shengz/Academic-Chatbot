@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Knowledgebase.aspx.cs" Inherits="Academic_Chatbot.Knowledgebase" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="pb-3 text-center">
-            <asp:Image ID="Knowledgebase_Image" CssClass="d-block mx-auto mb-4" Width="100" Height="100" ImageUrl="~/Image/book.png" runat="server" />
+            <asp:Image ID="Knowledgebase_Image" CssClass="d-block mx-auto mb-4" Width="100" Height="100" ImageUrl="~/Images/book.png" runat="server" />
             <h2>Knowledgebase Management</h2>
     </div>
     <hr />

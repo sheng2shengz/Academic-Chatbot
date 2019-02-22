@@ -117,8 +117,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Image\cap.png" />
-    <Content Include="Image\student.png" />
+    <Content Include="Images\cap.png" />
+    <Content Include="Images\student.png" />
     <Content Include="NewStudent.aspx" />
     <Content Include="Student.aspx" />
     <Content Include="UpdateUser.aspx" />
@@ -126,23 +126,23 @@
     <Content Include="ChatLog.aspx" />
     <Content Include="Content\chatbot.css" />
     <Content Include="Dashboard.aspx" />
-    <Content Include="Image\add.png" />
-    <Content Include="Image\AddUser.png" />
-    <Content Include="Image\announcement.png" />
-    <Content Include="Image\back.png" />
-    <Content Include="Image\book.png" />
-    <Content Include="Image\dashboard.png" />
-    <Content Include="Image\delete.png" />
-    <Content Include="Image\management.svg">
+    <Content Include="Images\add.png" />
+    <Content Include="Images\AddUser.png" />
+    <Content Include="Images\announcement.png" />
+    <Content Include="Images\back.png" />
+    <Content Include="Images\book.png" />
+    <Content Include="Images\dashboard.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\management.svg">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Image\Password1.png" />
-    <Content Include="Image\reminder.png" />
-    <Content Include="Image\service.png" />
-    <Content Include="Image\user1.png" />
-    <Content Include="Image\UserManagementBW.png" />
-    <Content Include="Image\UserManagement.png" />
-    <Content Include="Image\users.png" />
+    <Content Include="Images\Password1.png" />
+    <Content Include="Images\reminder.png" />
+    <Content Include="Images\service.png" />
+    <Content Include="Images\user1.png" />
+    <Content Include="Images\UserManagementBW.png" />
+    <Content Include="Images\UserManagement.png" />
+    <Content Include="Images\users.png" />
     <Content Include="Knowledgebase.aspx" />
     <Content Include="NewUser.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -156,8 +156,8 @@
     <Content Include="Content\dashboard.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Image\AcabotLogo.png" />
-    <Content Include="Image\User.png" />
+    <Content Include="Images\AcabotLogo.png" />
+    <Content Include="Images\User.png" />
     <Content Include="Announcement.aspx" />
     <Content Include="QnADeleteEntry.aspx" />
     <Content Include="QnANewEntry.aspx" />

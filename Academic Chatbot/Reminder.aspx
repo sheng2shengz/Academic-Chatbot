@@ -3,7 +3,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="pb-3 text-center">
-            <asp:Image ID="Reminder_Image" CssClass="d-block mx-auto mb-4" Width="100" Height="100" ImageUrl="~/Image/reminder.png" runat="server" />
+            <asp:Image ID="Reminder_Image" CssClass="d-block mx-auto mb-4" Width="100" Height="100" ImageUrl="~/Images/reminder.png" runat="server" />
             <h2>Reminder Management</h2>
     </div>
     <hr />
