@@ -2,12 +2,12 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="pb-3 text-center">
-            <asp:Image ID="UserManagement_Image" CssClass="d-block mx-auto mb-4" Width="100" Height="100" ImageUrl="~/Image/UserManagement.png" runat="server" />
+            <asp:Image ID="UserManagement_Image" CssClass="d-block mx-auto mb-4" Width="100" Height="100" ImageUrl="~/Images/UserManagement.png" runat="server" />
             <h2>User Management</h2>
         </div>
         <div class="jumbotron shadow row justify-content-md-center m-3 p-3">
             <div class="col align-self-center col-lg-1 text-center" style="cursor:pointer">
-                <asp:ImageButton ID="CreateUser_Button" CssClass="row rounded-circle btn btn-light shadow-lg p-1" BorderColor="Black" BorderWidth="2px" ToolTip="Create User" ImageUrl="~/Image/users.png" Width="75" Height="75" OnClick="CreateUser_Button_OnClick" runat="server" />  
+                <asp:ImageButton ID="CreateUser_Button" CssClass="row rounded-circle btn btn-light shadow-lg p-1" BorderColor="Black" BorderWidth="2px" ToolTip="Create User" ImageUrl="~/Images/users.png" Width="75" Height="75" OnClick="CreateUser_Button_OnClick" runat="server" />  
                 <asp:Label ID="CreateUser_Label" CssClass="row h7 text-center font-weight-light" runat="server">Create User</asp:Label>                
             </div>
             <div class="col align-self-center col-lg-2 mx-3 text-center">
@@ -15,7 +15,7 @@
             </div>
             <div class="col align-self-center col-lg-1 text-center" style="cursor:pointer">
                 
-                <asp:ImageButton ID="ChangePassword_Button" CssClass="row rounded-circle btn btn-danger shadow-lg p-1" BorderColor="Black" BorderWidth="2px" ToolTip="Change Password" ImageUrl="~/Image/Password1.png" Width="75" Height="75" runat="server" />  
+                <asp:ImageButton ID="ChangePassword_Button" CssClass="row rounded-circle btn btn-danger shadow-lg p-1" BorderColor="Black" BorderWidth="2px" ToolTip="Change Password" ImageUrl="~/Images/Password1.png" Width="75" Height="75" runat="server" />  
                 <asp:Label ID="ChangePassword_Label" CssClass="row h7 text-center text-nowrap font-weight-light" runat="server">Change Password</asp:Label>                
             </div>
         </div>
