@@ -1,4 +1,4 @@
-﻿<%@ Page Title="User Management" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="User.aspx.cs" Inherits="Academic_Chatbot.Accounts" %>
+﻿<%@ Page Title="User Management" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="User.aspx.cs" Inherits="Academic_Chatbot.User" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="pb-3 text-center">
@@ -11,84 +11,28 @@
                 <asp:Label ID="CreateUser_Label" CssClass="row h7 text-center font-weight-light" runat="server">Create User</asp:Label>                
             </div>
             <div class="col align-self-center col-lg-2 mx-3 text-center">
-                <h6 class="row justify-content-center">Existing Users: <b>4</b></h6>
-                <br />
-                <h6 class="row justify-content-center">Existing Roles: <b>3</b></h6>
+                <h6 class="row justify-content-center">Existing Users:&nbsp;<asp:Label ID="no_of_users" Font-Bold="True" runat="server"></asp:Label></h6>
             </div>
             <div class="col align-self-center col-lg-1 text-center" style="cursor:pointer">
+                
                 <asp:ImageButton ID="ChangePassword_Button" CssClass="row rounded-circle btn btn-danger shadow-lg p-1" BorderColor="Black" BorderWidth="2px" ToolTip="Change Password" ImageUrl="~/Image/Password1.png" Width="75" Height="75" runat="server" />  
                 <asp:Label ID="ChangePassword_Label" CssClass="row h7 text-center text-nowrap font-weight-light" runat="server">Change Password</asp:Label>                
             </div>
         </div>
         <div class="m-3">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Role</th>
-                    <th>Email Address</th>
-                    <th>Title</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Created Date</th>
-                    <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                    <th>1</th>
-                    <td>Admin</td>
-                    <td>asdfasba@gmail.com</td>
-                    <td>Mr</td>
-                    <td>ipsum</td>
-                    <td>dolor</td>
-                    <td>11.1.2017</td>
-                    <td>
-                        <asp:LinkButton ID="Edit_LinkButton" Text="Edit" CssClass="mr-1" Font-Underline="true" OnClick="Edit_LinkButton_OnClick" runat="server"></asp:LinkButton>
-                        <asp:LinkButton ID="Delete_LinkButton" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
-                    </td>
-                </tr>
-                <tr>
-                  <th>2</th>
-                    <td>FYP Coordinator</td>
-                    <td>iuogndg@gmail.com</td>
-                  <td>Dr</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>12.06.2017</td>
-                    <td>
-                        <asp:LinkButton ID="LinkButton1" Text="Edit" CssClass="mr-1" Font-Underline="true" runat="server"></asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton2" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
-                    </td>
-                </tr>
-                <tr>
-                  <th>3</th>
-                    <td>LI Coordinator</td>
-                    <td>ppedmx@gmail.com</td>
-                  <td>Miss</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>30.5.2017</td>
-                    <td>
-                        <asp:LinkButton ID="LinkButton3" Text="Edit" CssClass="mr-1" Font-Underline="true" runat="server"></asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton4" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
-                    </td>
-                </tr>
-                <tr>
-                  <th>4</th>
-                    <td>Admin</td>
-                    <td>123ghis@gmail.com</td>
-                  <td>Mrs</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>23.4.2017</td>
-                    <td>
-                        <asp:LinkButton ID="LinkButton5" Text="Edit" CssClass="mr-1" Font-Underline="true" runat="server"></asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton6" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
-                    </td>
-                </tr>
-              </tbody>
-            </table>
+            <asp:SqlDataSource ID="User_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT [user].user_id, [user].email_address, role.name, [user].title, [user].first_name, [user].last_name, [user].created_date FROM [user] INNER JOIN role ON [user].role_ID = role.role_id"></asp:SqlDataSource>
+            <asp:GridView ID="User_GridView" runat="server" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="True" HeaderStyle-ForeColor="Black" CssClass="table table-striped" AutoGenerateColumns="False" DataKeyNames="user_id" DataSourceID="User_SqlDataSource" AllowSorting="True">
+                <Columns>
+                    <asp:BoundField DataField="user_id" HeaderText="#" InsertVisible="False" ReadOnly="True" SortExpression="user_id" />
+                    <asp:BoundField DataField="email_address" HeaderText="Email" SortExpression="email_address" />
+                    <asp:BoundField DataField="name" HeaderText="Role" SortExpression="name" />
+                    <asp:BoundField DataField="title" HeaderText="Title" SortExpression="title" />
+                    <asp:BoundField DataField="first_name" HeaderText="First Name" SortExpression="first_name" />
+                    <asp:BoundField DataField="last_name" HeaderText="Last Name" SortExpression="last_name" />
+                    <asp:BoundField DataField="created_date" HeaderText="Created Date" SortExpression="created_date" />
+                    
+                </Columns>
+            </asp:GridView>
         </div>
 
     </div>

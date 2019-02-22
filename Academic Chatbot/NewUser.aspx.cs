@@ -27,7 +27,7 @@ namespace Academic_Chatbot
          {
             Encryption encrypt       = new Encryption();
             string EncryptedPassword = encrypt.MD5Encrypt(ConfirmPassword_TextBox.Text);
-            User user                = new User();
+            UserFunc user            = new UserFunc();
             user.Title               = Title_DropDownList.SelectedValue;
             user.FirstName           = FirstName_TextBox.Text;
             user.LastName            = LastName_TextBox.Text;

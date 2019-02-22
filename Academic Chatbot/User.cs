@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Academic_Chatbot
 {
-    public class User
+    public class UserFunc
     {
         public string EmailAddress { get; set; }
         public string Passwordhash { get; set; }
@@ -18,7 +18,7 @@ namespace Academic_Chatbot
         public string LastName { get; set; }
         public string CreatedDate { get; set; }
 
-        public void New_User(string connectionString, User user)
+        public void New_User(string connectionString, UserFunc user)
         {
             try
             {

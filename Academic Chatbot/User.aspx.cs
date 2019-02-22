@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Academic_Chatbot
 {
-    public partial class Accounts : System.Web.UI.Page
+    public partial class User : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            no_of_users.Text = User_GridView.Rows.Count.ToString();
         }
 
         protected void Edit_LinkButton_OnClick(object sender, EventArgs e)
