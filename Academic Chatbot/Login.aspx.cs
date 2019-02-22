@@ -41,6 +41,12 @@ namespace Academic_Chatbot
             da.Fill(dt);
             if (dt.Rows.Count >= 1)
                 Response.Redirect("Dashboard.aspx");
+            else
+            {
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                upModal.Update();
+            }
+                
         }
     }
 }
