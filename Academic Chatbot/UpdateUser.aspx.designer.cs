@@ -166,15 +166,6 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.TextBox Password_TextBox;
         
         /// <summary>
-        /// Password_RequiredValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator Password_RequiredValidator;
-        
-        /// <summary>
         /// ConfirmPassword_Label control.
         /// </summary>
         /// <remarks>
@@ -191,15 +182,6 @@ namespace Academic_Chatbot {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ConfirmPassword_TextBox;
-        
-        /// <summary>
-        /// ConfirmPassword_RequiredValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ConfirmPassword_RequiredValidator;
         
         /// <summary>
         /// PasswordConfirmPassword_CompareValidator control.

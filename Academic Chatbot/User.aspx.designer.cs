@@ -49,24 +49,6 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.Label no_of_users;
         
         /// <summary>
-        /// ChangePassword_Button control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ChangePassword_Button;
-        
-        /// <summary>
-        /// ChangePassword_Label control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ChangePassword_Label;
-        
-        /// <summary>
         /// User_SqlDataSource control.
         /// </summary>
         /// <remarks>

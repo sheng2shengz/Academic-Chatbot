@@ -36,7 +36,7 @@ namespace Academic_Chatbot
             user.Role                = Role_DropDownList.SelectedValue;
             user.CreatedDate         = DateTime.Today.ToString("dd/MM/yyyy");
 
-            user.New_User(ConnectionString, user);
+            user.NewUser(ConnectionString, user);
 
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
             upModal.Update();

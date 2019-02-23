@@ -242,6 +242,7 @@
     <Compile Include="Student.aspx.designer.cs">
       <DependentUpon>Student.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Student.cs" />
     <Compile Include="UpdateUser.aspx.cs">
       <DependentUpon>UpdateUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
