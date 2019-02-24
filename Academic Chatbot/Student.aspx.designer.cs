@@ -76,6 +76,15 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.Label Cohort_Label;
         
         /// <summary>
+        /// Cohort_SqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Cohort_SqlDataSource;
+        
+        /// <summary>
         /// Student_GridView control.
         /// </summary>
         /// <remarks>
@@ -112,6 +121,24 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.Label lblModalTitle;
         
         /// <summary>
+        /// AddCohortModal_TextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AddCohortModal_TextBox;
+        
+        /// <summary>
+        /// AddCohortModal_Button control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddCohortModal_Button;
+        
+        /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
@@ -128,5 +155,23 @@ namespace Academic_Chatbot {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// CohortModal_Dropdownlist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CohortModal_Dropdownlist;
+        
+        /// <summary>
+        /// DeleteCohortModal_Button control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteCohortModal_Button;
     }
 }

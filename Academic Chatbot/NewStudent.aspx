@@ -53,7 +53,7 @@
                     <div class="row-11">
                         <asp:DropDownList ID="Cohort_Dropdownlist" CssClass="btn btn-block btn-light" runat="server" DataSourceID="Cohort_SqlDataSource" DataTextField="name" DataValueField="cohort_id">
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="Cohort_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT [cohort_id], [name] FROM [cohort]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="Cohort_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT [cohort_id], [name] FROM [cohort] ORDER BY name ASC"></asp:SqlDataSource>
                     </div>
                 </div>
             </div>

@@ -30,10 +30,9 @@
             </div>
             <div class="col-auto">
                 <asp:Label ID="Cohort_Label" Text="Cohort:" runat="server"></asp:Label>
-                <asp:DropDownList CssClass="btn btn-sm btn-light border border-dark" runat="server">
-                    <asp:ListItem Text="2016"></asp:ListItem>
-                    <asp:ListItem Text="2018/2019"></asp:ListItem>
+                <asp:DropDownList CssClass="btn btn-sm btn-light border border-dark" runat="server" DataSourceID="Cohort_SqlDataSource" DataTextField="name" DataValueField="name">
                 </asp:DropDownList>
+                <asp:SqlDataSource ID="Cohort_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT [name] FROM [cohort] ORDER BY name ASC"></asp:SqlDataSource>
             </div>
         </div>
         <div class="m-3">
@@ -73,9 +72,9 @@
                         <div class="modal-body text-center mx-auto">
                             <div class="row mb-4">
                                 <asp:Label Text="Cohort Name:" runat="server"></asp:Label>
-                                <asp:TextBox CssClass="form-control col-auto" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="AddCohortModal_TextBox" CssClass="form-control col-auto" runat="server"></asp:TextBox>
                             </div>
-                            <asp:Button Text="Add" CssClass="col-4 btn btn-light" BorderColor="Black" runat="server" />
+                            <asp:Button ID="AddCohortModal_Button" Text="Add" CssClass="col-4 btn btn-light" BorderColor="Black" OnClick="AddCohortModal_Button_Click" runat="server" />
                         </div>
                     </div>
                 </ContentTemplate>
@@ -90,18 +89,16 @@
                     <div class="modal-content">
                         <div class="modal-header text-center">
                             <h4 class="modal-title mx-auto"><asp:Label ID="Label1" runat="server" Text="Delete Cohort?"></asp:Label></h4>
-                            <button type="button" class="close" data-dismiss="modal2" aria-hidden="true">&times;</button>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body text-center mx-auto">
                             <asp:Label Font-Bold="true" runat="server">Note: Deleting cohort will also delete the students of that cohort!</asp:Label>
                             <div class="row justify-content-center my-4">
                                 <asp:Label Text="Cohort Name:" CssClass="col-auto align-self-center" runat="server"></asp:Label>
-                                <asp:DropDownList CssClass="btn btn-danger" runat="server">
-                                    <asp:ListItem Text="2016"></asp:ListItem>
-                                    <asp:ListItem Text="2018/2019"></asp:ListItem>
+                                <asp:DropDownList ID="CohortModal_Dropdownlist" CssClass="btn btn-danger" runat="server" DataSourceID="Cohort_SqlDataSource" DataTextField="name" DataValueField="name">
                                 </asp:DropDownList>
                             </div>
-                            <asp:Button Text="Delete" CssClass="btn btn-danger" runat="server" />
+                            <asp:Button ID="DeleteCohortModal_Button" Text="Delete" CssClass="btn btn-danger" OnClientClick="return confirm('Are you sure?')" OnClick="DeleteCohortModal_Button_Click" runat="server" />
                         </div>
                     </div>
                 </ContentTemplate>

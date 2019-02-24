@@ -10,6 +10,8 @@ namespace Academic_Chatbot
 {
     public partial class Student : System.Web.UI.Page
     {
+        public string ConnectionString = WebConfigurationManager.ConnectionStrings["academic_chatbotConnectionString"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -45,6 +47,22 @@ namespace Academic_Chatbot
             //    student.deletestudent(connectionstring, student_id);
             //    student_gridview.databind();
             //}
+        }
+
+        protected void AddCohortModal_Button_Click(object sender, EventArgs e)
+        {
+            CohortFunc cohort = new CohortFunc();
+            cohort.Name = AddCohortModal_TextBox.Text;
+            cohort.NewCohort(ConnectionString, cohort);
+            Response.Redirect("Student.aspx");
+        }
+
+        protected void DeleteCohortModal_Button_Click(object sender, EventArgs e)
+        {
+            CohortFunc cohort = new CohortFunc();
+            cohort.Name = CohortModal_Dropdownlist.SelectedValue;
+            cohort.DeleteCohort(ConnectionString, cohort);
+            Response.Redirect("Student.aspx");
         }
     }
 }

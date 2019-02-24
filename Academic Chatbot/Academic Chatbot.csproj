@@ -229,6 +229,7 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cohort.cs" />
     <Compile Include="UpdateStudent.aspx.cs">
       <DependentUpon>UpdateStudent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
