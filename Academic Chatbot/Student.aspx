@@ -11,7 +11,7 @@
                 <asp:Button ID="AddStudent_Button" CssClass=" btn btn-light" BorderColor="Black" Text="Add Student" OnClick="AddStudent_Button_Click" runat="server" />
             </div>
             <div class="col align-self-center">
-                <asp:Label CssClass="row justify-content-center" Text="Total Students:<b>45</b>" runat="server"></asp:Label>
+                <asp:Label CssClass="row justify-content-center" runat="server">Total Students:&nbsp;<asp:Label ID="No_Of_Student" Font-Bold="True" runat="server"></asp:Label></asp:Label>
                 <asp:Label CssClass="row justify-content-center" Text="Number of Cohorts: <b>2</b>" runat="server"></asp:Label>
             </div>
             <div class="col  align-self-center">
@@ -37,59 +37,26 @@
             </div>
         </div>
         <div class="m-3">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Email Address</th>
-                    <th>Name</th>
-                    <th>Course</th>
-                    <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                    <td>BI15110234</td>
-                    <td>asdfasba@gmail.com</td>
-                    <td>Ipsum Dolor</td>
-                    <td>HC 05</td>
-                    <td>
-                        <asp:LinkButton ID="Edit_LinkButton" Text="Edit" CssClass="mr-1" Font-Underline="true" runat="server"></asp:LinkButton>
-                        <asp:LinkButton ID="Delete_LinkButton" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
-                    </td>
-                </tr>
-                <tr>
-                    <td>BI15113561</td>
-                    <td>iuogndg@gmail.com</td>
-                    <td>Consectetur adipiscing</td>
-                    <td>HC 00</td>
-                    <td>
-                        <asp:LinkButton ID="LinkButton1" Text="Edit" CssClass="mr-1" Font-Underline="true" runat="server"></asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton2" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
-                    </td>
-                </tr>
-                <tr>
-                    <td>BI15120122</td>
-                    <td>ppedmx@gmail.com</td>
-                    <td>Necodio</td>
-                    <td>HC 05</td>
-                    <td>
-                        <asp:LinkButton ID="LinkButton3" Text="Edit" CssClass="mr-1" Font-Underline="true" runat="server"></asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton4" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
-                    </td>
-                </tr>
-                <tr>
-                    <td>BI15111234</td>
-                    <td>123ghis@gmail.com</td>
-                    <td>Sed Cursus</td>
-                    <td>HC 05</td>
-                    <td>
-                        <asp:LinkButton ID="LinkButton5" Text="Edit" CssClass="mr-1" Font-Underline="true" runat="server"></asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton6" Text="Delete" Font-Underline="true" runat="server"></asp:LinkButton>
-                    </td>
-                </tr>
-              </tbody>
-            </table>
+            <asp:GridView ID="Student_GridView" runat="server" CssClass="table table-striped table-bordered" HeaderStyle-CssClass="thead-light" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="true" HeaderStyle-ForeColor="Black" OnRowCommand="Student_GridView_RowCommand" AllowSorting="True" AutoGenerateColumns="False" ShowHeaderWhenEmpty="true" DataKeyNames="student_id" DataSourceID="Student_SqlDataSource">
+                <Columns>
+                    <asp:TemplateField ItemStyle-CssClass="text-center">
+                        <ItemTemplate>
+                            <asp:Button ID="edit_button" CommandName="EditCommand" CommandArgument='<%#Eval("student_id") %>' runat="server" Font-Underline="true" Text="Edit" CssClass="btn btn-link p-0"/>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="student_id" HeaderText="Matric No." ReadOnly="True" SortExpression="student_id" />
+                    <asp:BoundField DataField="cohort" HeaderText="Cohort" SortExpression="cohort" />
+                    <asp:BoundField DataField="email_address" HeaderText="Email Address" SortExpression="email_address" />
+                    <asp:BoundField DataField="name" HeaderText="Name" SortExpression="name" />
+                    <asp:BoundField DataField="course" HeaderText="Course" SortExpression="course" />
+                    <asp:TemplateField ItemStyle-CssClass="text-center">
+                        <ItemTemplate>
+                            <asp:Button ID="delete_button" CommandName="DeleteCommand" CommandArgument='<%#Eval("student_id") %>' OnClientClick="return confirm('Are you sure?')" runat="server" ForeColor="Red" Font-Underline="true" Text="Delete" CssClass="btn btn-link p-0"/>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="Student_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT * FROM [studentView]"></asp:SqlDataSource>
         </div>
     </div>
 

@@ -10,88 +10,88 @@
 namespace Academic_Chatbot {
     
     
-    public partial class Student {
+    public partial class UpdateStudent {
         
         /// <summary>
-        /// Student_Image control.
+        /// back_ImageButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Student_Image;
+        protected global::System.Web.UI.WebControls.ImageButton back_ImageButton;
         
         /// <summary>
-        /// AddStudent_Button control.
+        /// Cap_Image control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddStudent_Button;
+        protected global::System.Web.UI.WebControls.Image Cap_Image;
         
         /// <summary>
-        /// No_Of_Student control.
+        /// StudentID_TextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label No_Of_Student;
+        protected global::System.Web.UI.WebControls.TextBox StudentID_TextBox;
         
         /// <summary>
-        /// AddCohort_Button control.
+        /// Name_TextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddCohort_Button;
+        protected global::System.Web.UI.WebControls.TextBox Name_TextBox;
         
         /// <summary>
-        /// DeleteCohort_Button control.
+        /// EmailAddress_TextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteCohort_Button;
+        protected global::System.Web.UI.WebControls.TextBox EmailAddress_TextBox;
         
         /// <summary>
-        /// ListOfStudent_Label control.
+        /// Course_Dropdownlist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ListOfStudent_Label;
+        protected global::System.Web.UI.WebControls.DropDownList Course_Dropdownlist;
         
         /// <summary>
-        /// Cohort_Label control.
+        /// Cohort_Dropdownlist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Cohort_Label;
+        protected global::System.Web.UI.WebControls.DropDownList Cohort_Dropdownlist;
         
         /// <summary>
-        /// Student_GridView control.
+        /// Cohort_SqlDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView Student_GridView;
+        protected global::System.Web.UI.WebControls.SqlDataSource Cohort_SqlDataSource;
         
         /// <summary>
-        /// Student_SqlDataSource control.
+        /// Submit_Button control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Student_SqlDataSource;
+        protected global::System.Web.UI.WebControls.Button Submit_Button;
         
         /// <summary>
         /// upModal control.
@@ -110,23 +110,5 @@ namespace Academic_Chatbot {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblModalTitle;
-        
-        /// <summary>
-        /// UpdatePanel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
     }
 }

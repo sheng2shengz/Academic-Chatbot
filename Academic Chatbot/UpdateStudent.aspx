@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="NewStudent.aspx.cs" Inherits="Academic_Chatbot.NewStudent" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="UpdateStudent.aspx.cs" Inherits="Academic_Chatbot.UpdateStudent" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <asp:ImageButton ID="back_ImageButton" CssClass="" Height="40" Width="40" ImageUrl="~/Images/back.png" OnClick="back_ImageButton_OnClick" CausesValidation="False" runat="server" />
         <div class="py-5 text-center">
             <asp:Image ID="Cap_Image" CssClass="d-block mx-auto mb-4" Width="80" Height="80" ImageUrl="~/Images/cap.png" runat="server" />
-            <h2>New Student</h2>
+            <h2>Update Student</h2>
         </div>
         <hr />
         <div class="container text-center mt-4">
@@ -51,7 +51,7 @@
                         <asp:Label Text="Cohort" CssClass="h6" runat="server"></asp:Label>
                     </div>
                     <div class="row-11">
-                        <asp:DropDownList ID="Cohort_Dropdownlist" CssClass="btn btn-block btn-light" runat="server" DataSourceID="Cohort_SqlDataSource" DataTextField="name" DataValueField="cohort_id">
+                        <asp:DropDownList ID="Cohort_Dropdownlist" CssClass="btn btn-block btn-light" runat="server" DataSourceID="Cohort_SqlDataSource" DataTextField="name" DataValueField="name">
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="Cohort_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT [cohort_id], [name] FROM [cohort]"></asp:SqlDataSource>
                     </div>
