@@ -73,14 +73,14 @@ namespace Academic_Chatbot
             if (e.CommandName.ToString() == "EditCommand")
                 Response.Redirect("UpdateStudent.aspx?student_id=" + e.CommandArgument);
 
-            //if (e.commandname.tostring() == "deletecommand")
-            //{
-            //    string connectionstring = webconfigurationmanager.connectionstrings["academic_chatbotconnectionstring"].connectionstring;
-            //    char student_id = convert.tochar(e.commandargument.tostring());
-            //    studentfunc student = new studentfunc();
-            //    student.deletestudent(connectionstring, student_id);
-            //    student_gridview.databind();
-            //}
+            if (e.CommandName.ToString() == "DeleteCommand")
+            {
+                string student_id = e.CommandArgument.ToString();
+                StudentFunc student = new StudentFunc();
+                student.DeleteStudent(ConnectionString, student_id);
+                Student_GridView.DataBind();
+                Response.Redirect(Request.RawUrl);
+            }
         }
 
         protected void AddCohortModal_Button_Click(object sender, EventArgs e)

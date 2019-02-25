@@ -69,7 +69,7 @@ namespace Academic_Chatbot
             }
         }
 
-        public void DeleteStudent(string connectionString, StudentFunc student)
+        public void DeleteStudent(string connectionString, string student)
         {
             try
             {
@@ -78,7 +78,7 @@ namespace Academic_Chatbot
                     SqlCommand cmd = new SqlCommand("DeleteStudent", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add(new SqlParameter("@StudentId", student.StudentId));
+                    cmd.Parameters.Add(new SqlParameter("@StudentId", student));
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
