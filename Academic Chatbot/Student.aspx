@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="m-3">
-            <asp:GridView ID="Student_GridView" runat="server" CssClass="table table-striped table-bordered" HeaderStyle-CssClass="thead-light" HeaderStyle-HorizontalAlign="Center" HeaderStyle-VerticalAlign="Middle" RowStyle-HorizontalAlign="Center" RowStyle-VerticalAlign="Middle" HeaderStyle-Font-Bold="true" HeaderStyle-ForeColor="Black" OnRowCommand="Student_GridView_RowCommand" AllowSorting="True" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" DataKeyNames="student_id" DataSourceID="Student_SqlDataSource">
+            <asp:GridView ID="Student_GridView" runat="server" CssClass="table table-striped table-bordered" HeaderStyle-CssClass="thead-light" EmptyDataText="There is no student under this cohort." HeaderStyle-HorizontalAlign="Center" HeaderStyle-VerticalAlign="Middle" RowStyle-HorizontalAlign="Center" RowStyle-VerticalAlign="Middle" HeaderStyle-Font-Bold="true" HeaderStyle-ForeColor="Black" OnRowCommand="Student_GridView_RowCommand" AllowSorting="True" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" DataKeyNames="student_id" DataSourceID="Student_SqlDataSource">
                 <Columns>
                     <asp:TemplateField ItemStyle-CssClass="text-center">
                         <ItemTemplate>
