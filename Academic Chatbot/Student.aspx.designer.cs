@@ -31,13 +31,22 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.Button AddStudent_Button;
         
         /// <summary>
-        /// No_Of_Student control.
+        /// NoOfStudent_Label control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label No_Of_Student;
+        protected global::System.Web.UI.WebControls.Label NoOfStudent_Label;
+        
+        /// <summary>
+        /// NoOfCohort_Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoOfCohort_Label;
         
         /// <summary>
         /// AddCohort_Button control.

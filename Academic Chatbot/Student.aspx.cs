@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
@@ -14,7 +15,40 @@ namespace Academic_Chatbot
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            NoOfStudent_Label.Text = Convert.ToString(CountStudent());
+            NoOfCohort_Label.Text = Convert.ToString(CountCohort());
+        }
 
+        public int CountStudent()
+        {
+            string SelectSQL = "SELECT COUNT(*) FROM student";
+            int count = 0;
+
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand SQLCmd = new SqlCommand(SelectSQL, conn))
+                {
+                    conn.Open();
+                    count = (int)SQLCmd.ExecuteScalar();
+                }
+            }
+            return count;
+        }
+
+        public int CountCohort()
+        {
+            string SelectSQL = "SELECT COUNT(*) FROM cohort";
+            int count = 0;
+
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand SQLCmd = new SqlCommand(SelectSQL, conn))
+                {
+                    conn.Open();
+                    count = (int)SQLCmd.ExecuteScalar();
+                }
+            }
+            return count;
         }
 
         protected void AddCohort_Button_Click(object sender, EventArgs e)

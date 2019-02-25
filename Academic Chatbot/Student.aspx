@@ -11,8 +11,8 @@
                 <asp:Button ID="AddStudent_Button" CssClass=" btn btn-light" BorderColor="Black" Text="Add Student" OnClick="AddStudent_Button_Click" runat="server" />
             </div>
             <div class="col align-self-center">
-                <asp:Label CssClass="row justify-content-center" runat="server">Total Students:&nbsp;<asp:Label ID="No_Of_Student" Font-Bold="True" runat="server"></asp:Label></asp:Label>
-                <asp:Label CssClass="row justify-content-center" Text="Number of Cohorts: <b>2</b>" runat="server"></asp:Label>
+                <asp:Label CssClass="row justify-content-center" runat="server">Total Students:&nbsp;<asp:Label ID="NoOfStudent_Label" Font-Bold="True" runat="server"></asp:Label></asp:Label>
+                <asp:Label CssClass="row justify-content-center" runat="server">Number of Cohorts:&nbsp;<asp:Label ID="NoOfCohort_Label" Font-Bold="True" runat="server"></asp:Label></asp:Label>
             </div>
             <div class="col  align-self-center">
                 <div class="row justify-content-center mb-2">
