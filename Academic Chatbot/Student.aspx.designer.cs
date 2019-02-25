@@ -85,6 +85,15 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.Label Cohort_Label;
         
         /// <summary>
+        /// Cohort_Dropdownlist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Cohort_Dropdownlist;
+        
+        /// <summary>
         /// Cohort_SqlDataSource control.
         /// </summary>
         /// <remarks>

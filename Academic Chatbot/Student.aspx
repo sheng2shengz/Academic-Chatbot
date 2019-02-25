@@ -30,13 +30,13 @@
             </div>
             <div class="col-auto">
                 <asp:Label ID="Cohort_Label" Text="Cohort:" runat="server"></asp:Label>
-                <asp:DropDownList CssClass="btn btn-sm btn-light border border-dark" runat="server" DataSourceID="Cohort_SqlDataSource" DataTextField="name" DataValueField="name">
+                <asp:DropDownList ID="Cohort_Dropdownlist" CssClass="btn btn-sm btn-light border border-dark" runat="server" DataSourceID="Cohort_SqlDataSource" DataTextField="name" DataValueField="name" AutoPostBack="true">
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="Cohort_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT [name] FROM [cohort] ORDER BY name ASC"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="Cohort_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT [name] FROM [cohort] ORDER BY name ASC" ></asp:SqlDataSource>
             </div>
         </div>
         <div class="m-3">
-            <asp:GridView ID="Student_GridView" runat="server" CssClass="table table-striped table-bordered" HeaderStyle-CssClass="thead-light" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="true" HeaderStyle-ForeColor="Black" OnRowCommand="Student_GridView_RowCommand" AllowSorting="True" AutoGenerateColumns="False" ShowHeaderWhenEmpty="true" DataKeyNames="student_id" DataSourceID="Student_SqlDataSource">
+            <asp:GridView ID="Student_GridView" runat="server" CssClass="table table-striped table-bordered" HeaderStyle-CssClass="thead-light" HeaderStyle-HorizontalAlign="Center" HeaderStyle-VerticalAlign="Middle" RowStyle-HorizontalAlign="Center" RowStyle-VerticalAlign="Middle" HeaderStyle-Font-Bold="true" HeaderStyle-ForeColor="Black" OnRowCommand="Student_GridView_RowCommand" AllowSorting="True" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" DataKeyNames="student_id" DataSourceID="Student_SqlDataSource">
                 <Columns>
                     <asp:TemplateField ItemStyle-CssClass="text-center">
                         <ItemTemplate>
@@ -54,8 +54,14 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
+
+<HeaderStyle HorizontalAlign="Center" CssClass="thead-light" Font-Bold="True" ForeColor="Black"></HeaderStyle>
             </asp:GridView>
-            <asp:SqlDataSource ID="Student_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT * FROM [studentView]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="Student_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT * FROM [studentView] WHERE ([cohort] = @cohort)">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="Cohort_Dropdownlist" Name="cohort" PropertyName="SelectedValue" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
         </div>
     </div>
 
