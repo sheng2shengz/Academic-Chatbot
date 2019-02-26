@@ -13,6 +13,7 @@ namespace Academic_Chatbot
         public string Type { get; set; }
         public string Subject { get; set; }
         public string Body { get; set; }
+        public string SendDate { get; set; }
 
         public void NewAnnouncement(string connectionString, AnnouncementFunc announcement)
         {
@@ -26,6 +27,7 @@ namespace Academic_Chatbot
                     cmd.Parameters.Add(new SqlParameter("@Type", announcement.Type));
                     cmd.Parameters.Add(new SqlParameter("@Subject", announcement.Subject));
                     cmd.Parameters.Add(new SqlParameter("@Body", announcement.Body));
+                    cmd.Parameters.Add(new SqlParameter("@SendDate", DateTime.Parse(announcement.SendDate)));
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -51,6 +53,7 @@ namespace Academic_Chatbot
                     cmd.Parameters.Add(new SqlParameter("@Type", announcement.Type));
                     cmd.Parameters.Add(new SqlParameter("@Subject", announcement.Subject));
                     cmd.Parameters.Add(new SqlParameter("@Body", announcement.Body));
+                    cmd.Parameters.Add(new SqlParameter("@SendDate", announcement.SendDate));
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -73,6 +76,7 @@ namespace Academic_Chatbot
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add(new SqlParameter("@AnnouncementId", announcement.AnnouncementId));
+                    cmd.Parameters.Add(new SqlParameter("@Type", announcement.Type));
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
