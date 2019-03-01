@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Announcement.aspx.cs" Inherits="Academic_Chatbot.Announcement" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FYP.Master" AutoEventWireup="true" CodeBehind="Announcement.aspx.cs" Inherits="Academic_Chatbot.Announcement" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -55,7 +55,7 @@
                 <asp:BoundField DataField="name" HeaderText="FYP/LI" SortExpression="name" />
                 <asp:BoundField DataField="subject" HeaderText="Subject" SortExpression="subject" />
                 <asp:BoundField DataField="body" HeaderText="Body" SortExpression="body" />
-                <asp:BoundField DataField="send_date" HeaderText="Send Date" SortExpression="send_date" />
+                <asp:BoundField DataField="send_date" HeaderText="Send Date" DataFormatString="{0:dd/MM/yyyy}" SortExpression="send_date" />
                 <asp:TemplateField ItemStyle-CssClass="text-center">
                     <ItemTemplate>
                         <asp:Button ID="delete_button" CommandName="DeleteCommand" CommandArgument='<%#Eval("announcement_id") %>' OnClientClick="return confirm('Are you sure?')" runat="server" ForeColor="Red" Font-Underline="true" Text="Delete" CssClass="btn btn-link p-0"/>

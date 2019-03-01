@@ -19,14 +19,22 @@ namespace Academic_Chatbot
         {
             if (Master.ToString() == "ASP.admin_master")
             {
-                type_Label.Visible = false;
-                type_Dropdownlist.Visible = false;
+                type_Label.Visible = true;
+                type_Dropdownlist.Visible = true;
                 Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView]";
             }
             else if (Master.ToString() == "ASP.fyp_master")
+            {
                 Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE name = 'FYP'";
+                type_Label.Visible = false;
+                type_Dropdownlist.Visible = false;
+            }
             else if (Master.ToString() == "ASP.li_master")
+            {
                  Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE name = 'LI'";
+                type_Label.Visible = false;
+                type_Dropdownlist.Visible = false;
+            }
 
             announcement_GridView.DataBind();
         }
