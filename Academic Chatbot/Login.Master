@@ -44,7 +44,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Academic Chatbot</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Academic Chatbot | <asp:HyperLink NavigateUrl="~/About.aspx" ForeColor="Black" runat="server">About</asp:HyperLink></p>
             </footer>
         </div>
 
