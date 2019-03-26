@@ -6,14 +6,20 @@
             <h2>User Management</h2>
         </div>
         <hr />
-        <div class="jumbotron shadow row justify-content-md-center mx-3 p-3">
-            <div class="col align-self-center col text-center">
-                <asp:Button ID="CreateUser_Button" CssClass=" btn btn-light" BorderColor="Black" Text="Add User" OnClick="CreateUser_Button_OnClick" runat="server" />
+        <div class="jumbotron shadow row justify-content-center mx-3 p-3">
+            <div class="col align-self-center">
+                <asp:Button ID="CreateUser_Button" CssClass="mx-auto btn btn-light" BorderColor="Black" Text="Add User" OnClick="CreateUser_Button_OnClick" runat="server" />
             </div>
             <div class="col align-self-center mx-3 text-center">
-                <h6 class="row justify-content-center">Existing Users:&nbsp;<asp:Label ID="no_of_users" Font-Bold="True" runat="server"></asp:Label></h6>
+                <h6 class="row justify-content-center">Total Users:&nbsp;<asp:Label ID="no_of_users" Font-Bold="True" runat="server"></asp:Label></h6>
             </div>
-            <div class="col"></div>
+            <div class="col">
+                <asp:Label CssClass="h6" runat="server"><asp:Label ID="NoOfAdmin_Label" Font-Bold="True" runat="server"></asp:Label>&nbsp;Admin(s)</asp:Label>
+                <br />
+                <asp:Label CssClass="h6" runat="server"><asp:Label ID="NoOfFYPCoordinator_Label" Font-Bold="True" runat="server"></asp:Label>&nbsp;FYP Coordinator(s)</asp:Label>
+                <br />
+                <asp:Label CssClass="h6" runat="server"><asp:Label ID="NoOfLICoordinator_Label" Font-Bold="True" runat="server"></asp:Label>&nbsp;LI Coordinator(s)</asp:Label>
+            </div>
         </div>
         <hr />
         <div class="row justify-content-between mx-3 align-items-center">

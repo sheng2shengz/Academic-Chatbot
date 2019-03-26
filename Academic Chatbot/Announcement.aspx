@@ -34,7 +34,7 @@
 
         </div>
         <div id="body" class="container mt-3 mx-3">
-            <asp:Label runat="server">Body</asp:Label>
+            <asp:Label runat="server">Content</asp:Label>
             <asp:TextBox ID="body_TextBox" CssClass="form-control" TextMode="MultiLine" runat="server"></asp:TextBox>
         </div>
         <asp:Button ID="SaveAnnouncement_Button" CssClass="mx-auto mt-3 btn btn-success" OnClick="SaveAnnouncement_Button_Click" text="Add Announcement" runat="server" />
@@ -54,7 +54,7 @@
                     </asp:TemplateField>
                 <asp:BoundField DataField="name" HeaderText="FYP/LI" SortExpression="name" />
                 <asp:BoundField DataField="subject" HeaderText="Subject" SortExpression="subject" />
-                <asp:BoundField DataField="body" HeaderText="Body" SortExpression="body" />
+                <asp:BoundField DataField="body" HeaderText="Content" SortExpression="body" />
                 <asp:BoundField DataField="send_date" HeaderText="Send Date" DataFormatString="{0:dd/MM/yyyy}" SortExpression="send_date" />
                 <asp:TemplateField ItemStyle-CssClass="text-center">
                     <ItemTemplate>

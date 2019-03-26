@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
@@ -10,9 +11,14 @@ namespace Academic_Chatbot
 {
     public partial class User : System.Web.UI.Page
     {
+        public string ConnectionString = WebConfigurationManager.ConnectionStrings["academic_chatbotConnectionString"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             no_of_users.Text = User_GridView.Rows.Count.ToString();
+            NoOfAdmin_Label.Text = Convert.ToString(CountAdmin());
+            NoOfFYPCoordinator_Label.Text = Convert.ToString(CountFYPCoordinator());
+            NoOfLICoordinator_Label.Text = Convert.ToString(CountLICoordinator());
         }
 
         protected void Edit_LinkButton_OnClick(object sender, EventArgs e)
@@ -38,6 +44,54 @@ namespace Academic_Chatbot
                 User.DeleteUser(ConnectionString, user_id);
                 User_GridView.DataBind();
             }
+        }
+
+        public int CountAdmin()
+        {
+            string SelectSQL = "SELECT COUNT(*) FROM [user] WHERE role_ID = 1";
+            int count = 0;
+
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand SQLCmd = new SqlCommand(SelectSQL, conn))
+                {
+                    conn.Open();
+                    count = (int)SQLCmd.ExecuteScalar();
+                }
+            }
+            return count;
+        }
+
+        public int CountFYPCoordinator()
+        {
+            string SelectSQL = "SELECT COUNT(*) FROM [user] WHERE role_ID = 2";
+            int count = 0;
+
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand SQLCmd = new SqlCommand(SelectSQL, conn))
+                {
+                    conn.Open();
+                    count = (int)SQLCmd.ExecuteScalar();
+                }
+            }
+            return count;
+        }
+
+        public int CountLICoordinator()
+        {
+            string SelectSQL = "SELECT COUNT(*) FROM [user] WHERE role_ID = 3";
+            int count = 0;
+
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand SQLCmd = new SqlCommand(SelectSQL, conn))
+                {
+                    conn.Open();
+                    count = (int)SQLCmd.ExecuteScalar();
+                }
+            }
+            return count;
         }
     }
 }

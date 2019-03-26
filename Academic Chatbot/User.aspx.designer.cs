@@ -40,6 +40,33 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.Label no_of_users;
         
         /// <summary>
+        /// NoOfAdmin_Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoOfAdmin_Label;
+        
+        /// <summary>
+        /// NoOfFYPCoordinator_Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoOfFYPCoordinator_Label;
+        
+        /// <summary>
+        /// NoOfLICoordinator_Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoOfLICoordinator_Label;
+        
+        /// <summary>
         /// ListOfUser_Label control.
         /// </summary>
         /// <remarks>
