@@ -16,9 +16,14 @@
             <div class="col"></div>
         </div>
         <hr />
+        <div class="row justify-content-between mx-3 align-items-center">
+            <div class="col">
+                <asp:Label ID="ListOfUser_Label" CssClass="h5 " Text="List of User" runat="server"></asp:Label>
+            </div>
+        </div>
         <div class="m-3">
             <asp:SqlDataSource ID="User_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT [user].user_id, [user].email_address, role.name, [user].title, [user].first_name, [user].last_name, [user].created_date FROM [user] INNER JOIN role ON [user].role_ID = role.role_id"></asp:SqlDataSource>
-            <asp:GridView ID="User_GridView" runat="server" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="True" HeaderStyle-ForeColor="Black" HeaderStyle-CssClass="thead-light" CssClass="table table-striped table-bordered" AutoGenerateColumns="False" DataKeyNames="user_id" DataSourceID="User_SqlDataSource" AllowSorting="True" OnRowCommand="UserGridView_RowCommand">
+            <asp:GridView ID="User_GridView" runat="server" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="True" HeaderStyle-ForeColor="Black" HeaderStyle-CssClass="thead-light" RowStyle-HorizontalAlign="Center" RowStyle-VerticalAlign="Middle" CssClass="table table-striped table-bordered" AutoGenerateColumns="False" DataKeyNames="user_id" DataSourceID="User_SqlDataSource" AllowSorting="True" OnRowCommand="UserGridView_RowCommand">
                 <Columns>
                     <asp:TemplateField ItemStyle-CssClass="text-center">
                         <ItemTemplate>
