@@ -177,8 +177,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
     <Content Include="Images\cap.png" />
+    <Content Include="Images\fci.png" />
+    <Content Include="Images\speech-bubble.png" />
     <Content Include="Images\student.png" />
+    <Content Include="Images\templatemo_logo.png" />
+    <Content Include="Images\UMS.png" />
     <Content Include="UpdateStudent.aspx" />
     <Content Include="NewStudent.aspx" />
     <Content Include="Student.aspx" />
@@ -245,7 +250,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="website.aspx" />
+    <Content Include="webpage.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Login.aspx" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -289,6 +294,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Announcement.cs" />
     <Compile Include="Cohort.cs" />
     <Compile Include="UpdateStudent.aspx.cs">
@@ -440,12 +452,12 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="website.aspx.cs">
-      <DependentUpon>website.aspx</DependentUpon>
+    <Compile Include="webpage.aspx.cs">
+      <DependentUpon>webpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="website.aspx.designer.cs">
-      <DependentUpon>website.aspx</DependentUpon>
+    <Compile Include="webpage.aspx.designer.cs">
+      <DependentUpon>webpage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

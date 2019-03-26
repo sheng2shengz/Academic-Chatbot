@@ -28,16 +28,7 @@ namespace Academic_Chatbot {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton CreateUser_Button;
-        
-        /// <summary>
-        /// CreateUser_Label control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CreateUser_Label;
+        protected global::System.Web.UI.WebControls.Button CreateUser_Button;
         
         /// <summary>
         /// no_of_users control.
