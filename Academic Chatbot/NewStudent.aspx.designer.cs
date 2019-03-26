@@ -40,6 +40,15 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.TextBox StudentID_TextBox;
         
         /// <summary>
+        /// StudentID_RequiredValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator StudentID_RequiredValidator;
+        
+        /// <summary>
         /// Name_TextBox control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.TextBox Name_TextBox;
         
         /// <summary>
+        /// Name_RequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Name_RequiredFieldValidator;
+        
+        /// <summary>
         /// EmailAddress_TextBox control.
         /// </summary>
         /// <remarks>
@@ -56,6 +74,24 @@ namespace Academic_Chatbot {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox EmailAddress_TextBox;
+        
+        /// <summary>
+        /// Email_RegExValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator Email_RegExValidator;
+        
+        /// <summary>
+        /// Email_RequiredValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Email_RequiredValidator;
         
         /// <summary>
         /// Course_Dropdownlist control.

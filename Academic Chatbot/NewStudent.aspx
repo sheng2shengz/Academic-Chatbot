@@ -16,6 +16,7 @@
                     <div class="row-11">
                         <asp:TextBox ID="StudentID_TextBox" CssClass="form-control" runat="server"></asp:TextBox>
                     </div>
+                    <asp:RequiredFieldValidator ID="StudentID_RequiredValidator" ControlToValidate="StudentID_TextBox" ErrorMessage="This field is required" CssClass="mx-auto text-danger" runat="server"></asp:RequiredFieldValidator>
                 </div>
                 <div class="col-6">
                     <div class="row justify-content-center">
@@ -24,6 +25,7 @@
                     <div class="row-11">
                         <asp:TextBox ID="Name_TextBox" CssClass="form-control" runat="server"></asp:TextBox>
                     </div>
+                    <asp:RequiredFieldValidator ID="Name_RequiredFieldValidator" ControlToValidate="Name_TextBox" ErrorMessage="This field is required" CssClass="mx-auto text-danger" runat="server"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="container mt-4">
@@ -32,7 +34,9 @@
                 </div>
                 <div class="row">
                     <asp:TextBox ID="EmailAddress_TextBox" CssClass="form-control" runat="server"></asp:TextBox>
+                <asp:RegularExpressionValidator ID="Email_RegExValidator" Display="Dynamic" ControlToValidate="EmailAddress_TextBox" CssClass="mx-auto text-danger" ValidationExpression="^([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))$" ErrorMessage="Invalid email format" runat="server"></asp:RegularExpressionValidator>
                 </div>
+                <asp:RequiredFieldValidator ID="Email_RequiredValidator" Display="Dynamic" ControlToValidate="EmailAddress_TextBox" ErrorMessage="This field is required" CssClass="mx-auto text-nowrap text-danger" runat="server"></asp:RequiredFieldValidator>
             </div>
             <div class="row mt-4">
                 <div class="col-6">
@@ -40,7 +44,7 @@
                         <asp:Label Text="Course" CssClass="h6" runat="server"></asp:Label>
                     </div>
                     <div class="row-11">
-                        <asp:DropDownList ID="Course_Dropdownlist" CssClass="btn btn-block btn-light" runat="server">
+                        <asp:DropDownList ID="Course_Dropdownlist" CssClass="btn btn-block btn-light form-control" runat="server">
                             <asp:ListItem Value="HC 05" Text="HC 05"></asp:ListItem>
                             <asp:ListItem Value="HC 00" Text="HC 00"></asp:ListItem>
                         </asp:DropDownList>
@@ -51,7 +55,7 @@
                         <asp:Label Text="Cohort" CssClass="h6" runat="server"></asp:Label>
                     </div>
                     <div class="row-11">
-                        <asp:DropDownList ID="Cohort_Dropdownlist" CssClass="btn btn-block btn-light" runat="server" DataSourceID="Cohort_SqlDataSource" DataTextField="name" DataValueField="cohort_id">
+                        <asp:DropDownList ID="Cohort_Dropdownlist" CssClass="btn btn-block btn-light form-control" runat="server" DataSourceID="Cohort_SqlDataSource" DataTextField="name" DataValueField="cohort_id">
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="Cohort_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT [cohort_id], [name] FROM [cohort] ORDER BY name ASC"></asp:SqlDataSource>
                     </div>
@@ -80,4 +84,32 @@
             </asp:UpdatePanel>
         </div>
     </div>
+
+    <script type="text/javascript">
+
+        //set the interval for checking the validators
+        setInterval(function () { colorBorders() }, 100);
+
+        function colorBorders() {
+            if (typeof (Page_Validators) !== 'undefined') {
+
+                //loop all the validators
+                for (var i = 0; i < Page_Validators.length; i++) {
+                    var validator = Page_Validators[i];
+                    var control = document.getElementById(validator.controltovalidate);
+
+                    //check if the control actually exists
+                    if (control != null) {
+
+                        //if the validator is not valid color the border red, if it is valid return to default color
+                        if (!validator.isvalid) {
+                            control.style.borderColor = '#ff0000';
+                        } else {
+                            control.style.borderColor = '#ced4da';
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </asp:Content>

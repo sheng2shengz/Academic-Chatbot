@@ -12,7 +12,7 @@ namespace Academic_Chatbot
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void back_ImageButton_OnClick(object sender, EventArgs e)
