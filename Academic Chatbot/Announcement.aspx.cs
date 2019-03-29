@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net;
 using System.Net.Mail;
 
 namespace Academic_Chatbot
@@ -73,7 +74,25 @@ namespace Academic_Chatbot
 
         protected void SendAnnouncement_Button_Click(object sender, EventArgs e)
         {
+            MailMessage msg = new MailMessage();
 
+            msg.From = new MailAddress("acabotfki@gmail.com");
+            msg.To.Add("sheng2shengz@gmail.com");
+            msg.Subject = subject_TextBox.Text;
+            msg.Body = body_TextBox.Text;
+            msg.IsBodyHtml = true;
+            msg.Priority = MailPriority.High;
+
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network; smtpClient.Credentials = new NetworkCredential("acabotfki@gmail.com", "Q1w2e3r4Acabot");
+
+            smtpClient.EnableSsl = true;  //if you use SSL then true
+
+            if (msg.To.Count > 0)
+            {
+                smtpClient.Send(msg);
+            }
         }
     }
 }
