@@ -25,11 +25,8 @@
                 <asp:TextBox ID="subject_TextBox" CssClass="row form-control" runat="server"></asp:TextBox>
             </div>
             <div class="col-3 container">
-                <asp:Label CssClass="" runat="server">Send On:</asp:Label>
-                <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
-                    <asp:TextBox ID="sendDate_TextBox" runat="server" CssClass="form-control" placeholder="DD/MM/YYYY" ></asp:TextBox>
-                    <div class="input-group-addon"></div>
-                </div>
+                <asp:Label CssClass="" runat="server">Send to(Cohort):</asp:Label>
+                    <asp:DropDownList ID="Cohort_DropDownList" CssClass="form-control" runat="server" DataSourceID="Cohort_SqlDataSource" DataTextField="name" DataValueField="cohort_id"></asp:DropDownList>
             </div>
 
         </div>
@@ -37,7 +34,10 @@
             <asp:Label runat="server">Content</asp:Label>
             <asp:TextBox ID="body_TextBox" CssClass="form-control" TextMode="MultiLine" runat="server"></asp:TextBox>
         </div>
-        <asp:Button ID="SaveAnnouncement_Button" CssClass="mx-auto mt-3 btn btn-success" OnClick="SaveAnnouncement_Button_Click" text="Add Announcement" runat="server" />
+        <div class="mt-3 row justify-content-end container">
+            <asp:Button ID="SaveAnnouncement_Button" CssClass="mx-auto col-4 btn btn-info" OnClick="SaveAnnouncement_Button_Click" text="Save" runat="server" />
+            <asp:Button ID="SendAnnouncement_Button" CssClass="mx-auto col-4 btn btn-primary" OnClick="SendAnnouncement_Button_Click" Text="Send" runat="server" />
+        </div>
     </div>
     <hr />
     <div class="container">
@@ -45,25 +45,28 @@
     </div>
 
     <div class="m-3">
-        <asp:GridView ID="announcement_GridView" runat="server" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="True" HeaderStyle-ForeColor="Black" HeaderStyle-CssClass="thead-light" CssClass="table table-striped table-bordered" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="announcement_id" DataSourceID="Announcement_SqlDataSource">
+        <asp:GridView ID="announcement_GridView" runat="server" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="True" HeaderStyle-ForeColor="Black" HeaderStyle-CssClass="thead-light" RowStyle-HorizontalAlign="Center" RowStyle-VerticalAlign="Middle" ShowHeaderWhenEmpty="true" EmptyDataText="There is no announcement saved." CssClass="table table-striped table-bordered" AllowSorting="True" AutoGenerateColumns="False" OnRowCommand="announcement_GridView_RowCommand" DataKeyNames="announcement_id" DataSourceID="Announcement_SqlDataSource">
             <Columns>
-                <asp:TemplateField ItemStyle-CssClass="text-center">
+                <asp:TemplateField ItemStyle-CssClass="text-center col-1">
                         <ItemTemplate>
                             <asp:Button ID="edit_button" CommandName="EditCommand" CommandArgument='<%#Eval("announcement_id") %>' runat="server" Font-Underline="true" Text="Edit" CssClass="btn btn-link p-0"/>
+                        <asp:Button ID="delete_button" CommandName="DeleteCommand" CommandArgument='<%#Eval("announcement_id") %>' OnClientClick="return confirm('Are you sure?')" runat="server" ForeColor="Red" Font-Underline="true" Text="Delete" CssClass="btn btn-link p-0"/>            
                         </ItemTemplate>
                     </asp:TemplateField>
+                <asp:BoundField DataField="announcement_id" HeaderText="announcement_id" Visible="false" SortExpression="announcement_id" />
                 <asp:BoundField DataField="name" HeaderText="FYP/LI" SortExpression="name" />
                 <asp:BoundField DataField="subject" HeaderText="Subject" SortExpression="subject" />
                 <asp:BoundField DataField="body" HeaderText="Content" SortExpression="body" />
-                <asp:BoundField DataField="send_date" HeaderText="Send Date" DataFormatString="{0:dd/MM/yyyy}" SortExpression="send_date" />
-                <asp:TemplateField ItemStyle-CssClass="text-center">
+                <asp:BoundField DataField="cohort" HeaderText="Cohort"  SortExpression="cohort" />
+                <asp:TemplateField ItemStyle-CssClass="text-center col-1">
                     <ItemTemplate>
-                        <asp:Button ID="delete_button" CommandName="DeleteCommand" CommandArgument='<%#Eval("announcement_id") %>' OnClientClick="return confirm('Are you sure?')" runat="server" ForeColor="Red" Font-Underline="true" Text="Delete" CssClass="btn btn-link p-0"/>
+                        <asp:Button Text="Send" CssClass="btn btn-primary" runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="Announcement_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT * FROM [announcementView]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="Cohort_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT * FROM [cohort]"></asp:SqlDataSource>
     </div>
 
     <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

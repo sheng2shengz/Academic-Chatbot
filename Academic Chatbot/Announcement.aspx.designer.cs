@@ -49,13 +49,13 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.TextBox subject_TextBox;
         
         /// <summary>
-        /// sendDate_TextBox control.
+        /// Cohort_DropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox sendDate_TextBox;
+        protected global::System.Web.UI.WebControls.DropDownList Cohort_DropDownList;
         
         /// <summary>
         /// body_TextBox control.
@@ -74,6 +74,15 @@ namespace Academic_Chatbot {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SaveAnnouncement_Button;
+        
+        /// <summary>
+        /// SendAnnouncement_Button control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SendAnnouncement_Button;
         
         /// <summary>
         /// listofannouncement_label control.
@@ -101,6 +110,15 @@ namespace Academic_Chatbot {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource Announcement_SqlDataSource;
+        
+        /// <summary>
+        /// Cohort_SqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Cohort_SqlDataSource;
         
         /// <summary>
         /// upModal control.

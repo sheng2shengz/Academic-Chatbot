@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
@@ -35,8 +33,6 @@ namespace Academic_Chatbot
                 type_Label.Visible = false;
                 type_Dropdownlist.Visible = false;
             }
-
-            announcement_GridView.DataBind();
         }
 
         protected void SaveAnnouncement_Button_Click(object sender, EventArgs e)
@@ -44,7 +40,7 @@ namespace Academic_Chatbot
             AnnouncementFunc announcement = new AnnouncementFunc();
             announcement.Subject = subject_TextBox.Text;
             announcement.Body = body_TextBox.Text;
-            announcement.SendDate = sendDate_TextBox.Text;
+            announcement.CohortID = Int32.Parse(Cohort_DropDownList.SelectedValue.ToString());
             if (Master.ToString() == "ASP.FYP_master")
                 announcement.Type = "FYP";
             else if (Master.ToString() == "ASP.LI_master")
@@ -58,6 +54,26 @@ namespace Academic_Chatbot
             upModal.Update();
 
             Response.AddHeader("REFRESH", "3;URL=Announcement.aspx");
+        }
+
+        protected void announcement_GridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.ToString() == "EditCommand")
+                Response.Redirect("UpdateStudent.aspx?student_id=" + e.CommandArgument);
+
+            if (e.CommandName.ToString() == "DeleteCommand")
+            {
+                int announcement_id = Convert.ToInt32(e.CommandArgument.ToString());
+                AnnouncementFunc Announcement = new AnnouncementFunc();
+                Announcement.DeleteAnnouncement(ConnectionString, announcement_id);
+                announcement_GridView.DataBind();
+                Response.Redirect(Request.RawUrl);
+            }
+        }
+
+        protected void SendAnnouncement_Button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
