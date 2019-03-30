@@ -20,7 +20,6 @@ namespace Academic_Chatbot
             {
                 type_Label.Visible = true;
                 type_Dropdownlist.Visible = true;
-                Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView]";
             }
             else if (Master.ToString() == "ASP.fyp_master")
             {
@@ -48,13 +47,14 @@ namespace Academic_Chatbot
                 announcement.Type = "LI";
             else if (Master.ToString() == "ASP.admin_master")
                 announcement.Type = type_Dropdownlist.SelectedValue;
+            announcement.Status = "saved";
 
             announcement.NewAnnouncement(ConnectionString, announcement);
 
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
             upModal.Update();
 
-            Response.AddHeader("REFRESH", "3;URL=Announcement.aspx");
+            announcement_GridView.DataBind();
         }
 
         protected void announcement_GridView_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -82,17 +82,36 @@ namespace Academic_Chatbot
             msg.Body = body_TextBox.Text;
             msg.IsBodyHtml = true;
             msg.Priority = MailPriority.High;
-
+            
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
 
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network; smtpClient.Credentials = new NetworkCredential("acabotfki@gmail.com", "Q1w2e3r4Acabot");
 
-            smtpClient.EnableSsl = true;  //if you use SSL then true
+            smtpClient.EnableSsl = true;  // use SSL
 
             if (msg.To.Count > 0)
             {
                 smtpClient.Send(msg);
             }
+
+            AnnouncementFunc announcement = new AnnouncementFunc();
+            announcement.Subject = subject_TextBox.Text;
+            announcement.Body = body_TextBox.Text;
+            announcement.CohortID = Int32.Parse(Cohort_DropDownList.SelectedValue.ToString());
+            if (Master.ToString() == "ASP.FYP_master")
+                announcement.Type = "FYP";
+            else if (Master.ToString() == "ASP.LI_master")
+                announcement.Type = "LI";
+            else if (Master.ToString() == "ASP.admin_master")
+                announcement.Type = type_Dropdownlist.SelectedValue;
+            announcement.Status = "sent";
+
+            announcement.NewAnnouncement(ConnectionString, announcement);
+
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "sentModal", "$('#sentModal').modal();", true);
+            upModal.Update();
+
+            SentAnnouncement_GridView.DataBind();
         }
     }
 }

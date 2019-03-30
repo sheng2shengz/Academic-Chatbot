@@ -34,25 +34,25 @@
             <asp:Label runat="server">Content</asp:Label>
             <asp:TextBox ID="body_TextBox" CssClass="form-control" TextMode="MultiLine" runat="server"></asp:TextBox>
         </div>
-        <div class="mt-3 row justify-content-end container">
-            <asp:Button ID="SaveAnnouncement_Button" CssClass="mx-auto col-4 btn btn-info" OnClick="SaveAnnouncement_Button_Click" text="Save" runat="server" />
-            <asp:Button ID="SendAnnouncement_Button" CssClass="mx-auto col-4 btn btn-primary" OnClick="SendAnnouncement_Button_Click" Text="Send" runat="server" />
+        <div class="mt-3 row justify-content-center container">
+            <asp:Button ID="SaveAnnouncement_Button" CssClass="mx-auto col-4 btn btn-outline-info" OnClick="SaveAnnouncement_Button_Click" text="Save" runat="server" />
+            <asp:Button ID="SendAnnouncement_Button" CssClass="mx-auto col-4 btn btn-outline-primary" OnClick="SendAnnouncement_Button_Click" Text="Send" runat="server" />
         </div>
     </div>
     <hr />
     <div class="container">
-        <asp:Label ID="listofannouncement_label" CssClass="h4" runat="server">List of Announcement</asp:Label>
+        <asp:Label CssClass="h4" runat="server">Saved Announcement</asp:Label>
     </div>
 
-    <div class="m-3">
+    <div class="m-3 mb-5">
         <asp:GridView ID="announcement_GridView" runat="server" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="True" HeaderStyle-ForeColor="Black" HeaderStyle-CssClass="thead-light" RowStyle-HorizontalAlign="Center" RowStyle-VerticalAlign="Middle" ShowHeaderWhenEmpty="true" EmptyDataText="There is no announcement saved." CssClass="table table-striped table-bordered" AllowSorting="True" AutoGenerateColumns="False" OnRowCommand="announcement_GridView_RowCommand" DataKeyNames="announcement_id" DataSourceID="Announcement_SqlDataSource">
             <Columns>
                 <asp:TemplateField ItemStyle-CssClass="text-center col-1">
-                        <ItemTemplate>
-                            <asp:Button ID="edit_button" CommandName="EditCommand" CommandArgument='<%#Eval("announcement_id") %>' runat="server" Font-Underline="true" Text="Edit" CssClass="btn btn-link p-0"/>
-                        <asp:Button ID="delete_button" CommandName="DeleteCommand" CommandArgument='<%#Eval("announcement_id") %>' OnClientClick="return confirm('Are you sure?')" runat="server" ForeColor="Red" Font-Underline="true" Text="Delete" CssClass="btn btn-link p-0"/>            
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="edit_button" CommandName="EditCommand" CommandArgument='<%#Eval("announcement_id") %>' runat="server" Font-Underline="true" Text="Edit" CssClass="btn btn-sm btn-link p-0"/>
+                        <asp:Button ID="delete_button" CommandName="DeleteCommand" CommandArgument='<%#Eval("announcement_id") %>' OnClientClick="return confirm('Are you sure?')" runat="server" ForeColor="Red" Font-Underline="true" Text="Delete" CssClass="btn btn-sm btn-link p-0"/>            
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="announcement_id" HeaderText="announcement_id" Visible="false" SortExpression="announcement_id" />
                 <asp:BoundField DataField="name" HeaderText="FYP/LI" SortExpression="name" />
                 <asp:BoundField DataField="subject" HeaderText="Subject" SortExpression="subject" />
@@ -60,12 +60,49 @@
                 <asp:BoundField DataField="cohort" HeaderText="Cohort"  SortExpression="cohort" />
                 <asp:TemplateField ItemStyle-CssClass="text-center col-1">
                     <ItemTemplate>
-                        <asp:Button Text="Send" CssClass="btn btn-primary" runat="server" />
+                        <asp:Button Text="Send" CssClass="btn btn-sm btn-primary" runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="Announcement_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT * FROM [announcementView]"></asp:SqlDataSource>
+    </div>
+
+    <hr />
+
+    <div class="container">
+        <asp:Label CssClass="h4" runat="server">Sent Announcement</asp:Label>
+    </div>
+    <div class="m-3">
+        <asp:GridView ID="SentAnnouncement_GridView" runat="server" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="True" HeaderStyle-ForeColor="Black" HeaderStyle-CssClass="thead-light" RowStyle-HorizontalAlign="Center" RowStyle-VerticalAlign="Middle" ShowHeaderWhenEmpty="true" EmptyDataText="There is no announcement saved." CssClass="table table-striped table-bordered" AllowSorting="True" AutoGenerateColumns="False" OnRowCommand="announcement_GridView_RowCommand" DataKeyNames="announcement_id" DataSourceID="SentAnnouncement_SqlDataSource">
+             <Columns>
+                <asp:TemplateField ItemStyle-CssClass="text-center col-1">
+                    <ItemTemplate>
+                        <asp:Button ID="delete_button" CommandName="DeleteCommand" CommandArgument='<%#Eval("announcement_id") %>' OnClientClick="return confirm('Are you sure?')" runat="server" ForeColor="Red" Font-Underline="true" Text="Delete" CssClass="btn btn-sm btn-link p-0"/>            
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:BoundField DataField="announcement_id" HeaderText="announcement_id" Visible="false" SortExpression="announcement_id" />
+                <asp:BoundField DataField="name" HeaderText="FYP/LI" SortExpression="name" />
+                <asp:BoundField DataField="subject" HeaderText="Subject" SortExpression="subject" />
+                <asp:BoundField DataField="body" HeaderText="Content" SortExpression="body" />
+                <asp:BoundField DataField="cohort" HeaderText="Cohort"  SortExpression="cohort" />
+                <asp:TemplateField ItemStyle-CssClass="text-center col-1">
+                    <ItemTemplate>
+                        <asp:Button Text="Sent" CssClass="btn btn-sm btn-success" runat="server" disabled />
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+
+        <asp:SqlDataSource ID="Announcement_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT * FROM [announcementView] WHERE ([status] = @status)">
+            <SelectParameters>
+                <asp:QueryStringParameter DefaultValue="saved" Name="status" QueryStringField="saved" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SentAnnouncement_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT * FROM [announcementView] WHERE ([status] = @status)">
+            <SelectParameters>
+                <asp:QueryStringParameter DefaultValue="sent" Name="status" QueryStringField="sent" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
         <asp:SqlDataSource ID="Cohort_SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:academic_chatbotConnectionString %>" SelectCommand="SELECT * FROM [cohort]"></asp:SqlDataSource>
     </div>
 
@@ -81,6 +118,26 @@
                         <div class="modal-body text-center mx-auto">
                             <div class="row mb-4">
                                 <asp:Label Text="Announcement has been saved." runat="server"></asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+
+    <div class="modal fade" id="sentModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title mx-auto"><asp:Label ID="Label1" runat="server" Text="Announcement Sent!"></asp:Label></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body text-center mx-auto">
+                            <div class="row mb-4">
+                                <asp:Label Text="Announcement has been sent." runat="server"></asp:Label>
                             </div>
                         </div>
                     </div>

@@ -14,6 +14,7 @@ namespace Academic_Chatbot
         public string Subject { get; set; }
         public string Body { get; set; }
         public int CohortID { get; set; }
+        public string Status { get; set; }
 
         public void NewAnnouncement(string connectionString, AnnouncementFunc announcement)
         {
@@ -28,6 +29,7 @@ namespace Academic_Chatbot
                     cmd.Parameters.Add(new SqlParameter("@Subject", announcement.Subject));
                     cmd.Parameters.Add(new SqlParameter("@Body", announcement.Body));
                     cmd.Parameters.Add(new SqlParameter("@CohortID", announcement.CohortID));
+                    cmd.Parameters.Add(new SqlParameter("@Status", announcement.Status));
 
                     conn.Open();
                     cmd.ExecuteNonQuery();

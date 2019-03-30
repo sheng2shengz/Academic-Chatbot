@@ -85,15 +85,6 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.Button SendAnnouncement_Button;
         
         /// <summary>
-        /// listofannouncement_label control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label listofannouncement_label;
-        
-        /// <summary>
         /// announcement_GridView control.
         /// </summary>
         /// <remarks>
@@ -103,6 +94,15 @@ namespace Academic_Chatbot {
         protected global::System.Web.UI.WebControls.GridView announcement_GridView;
         
         /// <summary>
+        /// SentAnnouncement_GridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView SentAnnouncement_GridView;
+        
+        /// <summary>
         /// Announcement_SqlDataSource control.
         /// </summary>
         /// <remarks>
@@ -110,6 +110,15 @@ namespace Academic_Chatbot {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource Announcement_SqlDataSource;
+        
+        /// <summary>
+        /// SentAnnouncement_SqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SentAnnouncement_SqlDataSource;
         
         /// <summary>
         /// Cohort_SqlDataSource control.
@@ -137,5 +146,23 @@ namespace Academic_Chatbot {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblModalTitle;
+        
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
     }
 }
