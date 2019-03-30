@@ -57,7 +57,7 @@ namespace Academic_Chatbot
 
         public int CountAnnouncement()
         {
-            string SelectSQL = "SELECT COUNT(*) FROM announcement";
+            string SelectSQL = "SELECT COUNT(*) FROM announcement WHERE status = 'saved'";
             int count = 0;
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))

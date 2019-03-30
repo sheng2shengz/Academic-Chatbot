@@ -45,12 +45,12 @@
     </div>
 
     <div class="m-3 mb-5">
-        <asp:GridView ID="announcement_GridView" runat="server" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="True" HeaderStyle-ForeColor="Black" HeaderStyle-CssClass="thead-light" RowStyle-HorizontalAlign="Center" RowStyle-VerticalAlign="Middle" ShowHeaderWhenEmpty="true" EmptyDataText="There is no announcement saved." CssClass="table table-striped table-bordered" AllowSorting="True" AutoGenerateColumns="False" OnRowCommand="announcement_GridView_RowCommand" DataKeyNames="announcement_id" DataSourceID="Announcement_SqlDataSource">
+        <asp:GridView ID="announcement_GridView" runat="server" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="True" HeaderStyle-ForeColor="Black" HeaderStyle-CssClass="thead-light" RowStyle-HorizontalAlign="Center" RowStyle-VerticalAlign="Middle" ShowHeaderWhenEmpty="true" EmptyDataText="There is no announcement saved." CssClass="table table-striped table-bordered" HeaderStyle-BorderWidth="1" AllowSorting="True" AutoGenerateColumns="False" OnRowCommand="announcement_GridView_RowCommand" DataKeyNames="announcement_id" DataSourceID="Announcement_SqlDataSource">
             <Columns>
                 <asp:TemplateField ItemStyle-CssClass="text-center col-1">
                     <ItemTemplate>
-                        <asp:Button ID="edit_button" CommandName="EditCommand" CommandArgument='<%#Eval("announcement_id") %>' runat="server" Font-Underline="true" Text="Edit" CssClass="btn btn-sm btn-link p-0"/>
-                        <asp:Button ID="delete_button" CommandName="DeleteCommand" CommandArgument='<%#Eval("announcement_id") %>' OnClientClick="return confirm('Are you sure?')" runat="server" ForeColor="Red" Font-Underline="true" Text="Delete" CssClass="btn btn-sm btn-link p-0"/>            
+                        <asp:Button ID="edit_button" CommandName="EditCommand" CommandArgument='<%#Eval("announcement_id") %>' runat="server" Font-Underline="true" Text="Edit" CssClass="font-weight-bold btn btn-sm btn-link p-0"/>
+                        <asp:Button ID="delete_button" CommandName="DeleteCommand" CommandArgument='<%#Eval("announcement_id") %>' OnClientClick="return confirm('Are you sure?')" runat="server" ForeColor="Red" Font-Underline="true" Text="Delete" CssClass="font-weight-bold btn btn-sm btn-link p-0"/>            
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="announcement_id" HeaderText="announcement_id" Visible="false" SortExpression="announcement_id" />
@@ -77,7 +77,7 @@
              <Columns>
                 <asp:TemplateField ItemStyle-CssClass="text-center col-1">
                     <ItemTemplate>
-                        <asp:Button ID="delete_button" CommandName="DeleteCommand" CommandArgument='<%#Eval("announcement_id") %>' OnClientClick="return confirm('Are you sure?')" runat="server" ForeColor="Red" Font-Underline="true" Text="Delete" CssClass="btn btn-sm btn-link p-0"/>            
+                        <asp:Button ID="delete_button" CommandName="DeleteCommand" CommandArgument='<%#Eval("announcement_id") %>' OnClientClick="return confirm('Are you sure?')" runat="server" ForeColor="Red" Font-Underline="true" Text="Delete" CssClass="font-weight-bold btn btn-sm btn-link p-0"/>            
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="announcement_id" HeaderText="announcement_id" Visible="false" SortExpression="announcement_id" />

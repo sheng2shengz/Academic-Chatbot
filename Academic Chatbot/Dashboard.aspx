@@ -24,7 +24,7 @@
     <div class="row align-items-center text-center">
         <asp:Label ID="therearecurrently_Label" CssClass="col-4 align-middle" runat="server">There Are Currently:</asp:Label>
         <div class="col-8">
-            <asp:Label CssClass="h6" runat="server"><asp:Label ID="NoOfAnnouncement_Label" Font-Bold="True" runat="server"></asp:Label>&nbsp;announcement(s) in your inventory.</asp:Label>
+            <asp:Label CssClass="h6" runat="server"><asp:Label ID="NoOfAnnouncement_Label" Font-Bold="True" runat="server"></asp:Label>&nbsp;announcement(s) saved in your inventory.</asp:Label>
             <br /><br />
             <asp:Label CssClass="h6" runat="server"><asp:Label ID="NoOfStudent_Label" Font-Bold="True" runat="server"></asp:Label>&nbsp;total of student(s) in the mailing list.</asp:Label>
             <br /><br />
