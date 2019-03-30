@@ -67,12 +67,12 @@
                 <ContentTemplate>
                     <div class="modal-content">
                         <div class="modal-header ">
-                            <h4 class="modal-title mx-auto"><asp:Label ID="lblModalTitle" runat="server" Text="Student Submitted!"></asp:Label></h4>
+                            <h4 class="modal-title mx-auto"><asp:Label ID="lblModalTitle" runat="server" Text="Student Updated!"></asp:Label></h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body text-center mx-auto">
                             <div class="row mb-4">
-                                <asp:Label Text="Student has been saved in the database." runat="server"></asp:Label>
+                                <asp:Label Text="Student has been updated." runat="server"></asp:Label>
                             </div>
                         </div>
                     </div>
