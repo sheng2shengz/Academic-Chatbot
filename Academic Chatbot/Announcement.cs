@@ -89,5 +89,28 @@ namespace Academic_Chatbot
                 throw ex;
             }
         }
+
+        public AnnouncementFunc GetAnnouncementData(string connectionString, string AnnouncementId)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+
+            string SelectSQL = "SELECT announcemnt_id, subject, body FROM announcementView WHERE announcement_id = '" + AnnouncementId + "'";
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand(SelectSQL, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            AnnouncementFunc Announcement = new AnnouncementFunc();
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    Announcement.AnnouncementId = Convert.ToInt32(dr["announcement_id"]);
+                    Announcement.Subject = dr["subject"].ToString();
+                    Announcement.Body = dr["body"].ToString();
+                    //Announcement.CohortID = dr["name"].ToString();
+                }
+            }
+            return Announcement;
+        }
     }
 }

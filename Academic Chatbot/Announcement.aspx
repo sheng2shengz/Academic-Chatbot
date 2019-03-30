@@ -60,7 +60,7 @@
                 <asp:BoundField DataField="cohort" HeaderText="Cohort"  SortExpression="cohort" />
                 <asp:TemplateField ItemStyle-CssClass="text-center col-1">
                     <ItemTemplate>
-                        <asp:Button Text="Send" CssClass="btn btn-sm btn-primary" runat="server" />
+                        <asp:Button Text="Send" CssClass="btn btn-sm btn-primary" CommandName="SendCommand" CommandArgument='<%#Eval("announcement_id") %>' runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

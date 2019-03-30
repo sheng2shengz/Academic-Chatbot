@@ -7,6 +7,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net;
 using System.Net.Mail;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Academic_Chatbot
 {
@@ -70,29 +72,40 @@ namespace Academic_Chatbot
                 announcement_GridView.DataBind();
                 Response.Redirect(Request.RawUrl);
             }
+
+            if (e.CommandName.ToString() == "SendCommand")
+            {
+
+            }
         }
 
         protected void SendAnnouncement_Button_Click(object sender, EventArgs e)
         {
-            MailMessage msg = new MailMessage();
+            SqlConnection con = new SqlConnection(ConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM [studentView] WHERE cohort = '" + Cohort_DropDownList.SelectedItem.Text + "'";
+            cmd.Connection = con;
+            DataTable membersTable = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            con.Open();
+            da.Fill(membersTable);
+            con.Close();
 
+
+            MailMessage msg = new MailMessage();
             msg.From = new MailAddress("acabotfki@gmail.com");
-            msg.To.Add("sheng2shengz@gmail.com");
+            foreach (DataRow row in membersTable.Rows)
+                msg.To.Add(row["email_address"].ToString());
             msg.Subject = subject_TextBox.Text;
             msg.Body = body_TextBox.Text;
             msg.IsBodyHtml = true;
             msg.Priority = MailPriority.High;
-            
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network; smtpClient.Credentials = new NetworkCredential("acabotfki@gmail.com", "Q1w2e3r4Acabot");
-
             smtpClient.EnableSsl = true;  // use SSL
-
             if (msg.To.Count > 0)
-            {
                 smtpClient.Send(msg);
-            }
 
             AnnouncementFunc announcement = new AnnouncementFunc();
             announcement.Subject = subject_TextBox.Text;
