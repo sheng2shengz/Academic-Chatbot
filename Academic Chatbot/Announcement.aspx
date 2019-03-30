@@ -11,7 +11,7 @@
     </div>
     <hr />
     <div class="jumbotron shadow row mx-3 pt-0 pb-2 px-0">
-        <asp:Label CssClass="h4 d-block p-2 bg-dark text-white rounded-top col-12" runat="server">New Announcement</asp:Label>
+        <asp:Label CssClass="font-weight-light h4 d-block p-2 bg-dark text-white rounded-top col-12" runat="server">New Announcement</asp:Label>
         <div id="type_div" class="container mx-3 mb-3">
                 <asp:Label ID="type_Label" CssClass="row" runat="server">Type</asp:Label>
                 <asp:DropDownList ID="type_Dropdownlist" CssClass="row form-control" runat="server">
@@ -87,7 +87,7 @@
                 <asp:BoundField DataField="cohort" HeaderText="Cohort"  SortExpression="cohort" />
                 <asp:TemplateField ItemStyle-CssClass="text-center col-1">
                     <ItemTemplate>
-                        <asp:Button Text="Sent" CssClass="btn btn-sm btn-success" runat="server" disabled />
+                        <asp:Button Text="Sent" CssClass="btn btn-sm btn-success" runat="server" disabled></asp:Button>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

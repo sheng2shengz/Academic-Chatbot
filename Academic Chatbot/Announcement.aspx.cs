@@ -62,7 +62,7 @@ namespace Academic_Chatbot
         protected void announcement_GridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName.ToString() == "EditCommand")
-                Response.Redirect("UpdateStudent.aspx?student_id=" + e.CommandArgument);
+                Response.Redirect("UpdateAnnouncement.aspx?announcement_id=" + e.CommandArgument);
 
             if (e.CommandName.ToString() == "DeleteCommand")
             {
@@ -75,7 +75,46 @@ namespace Academic_Chatbot
 
             if (e.CommandName.ToString() == "SendCommand")
             {
+                int announcement_id = Convert.ToInt32(e.CommandArgument.ToString());
+                AnnouncementFunc Announcement = new AnnouncementFunc();
+                Announcement = Announcement.GetAnnouncementData(ConnectionString, announcement_id);
 
+                string subject = Announcement.Subject;
+                string body = Announcement.Body;
+                string cohort = Announcement.Cohort;
+                
+                SqlConnection con = new SqlConnection(ConnectionString);
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT * FROM [studentView] WHERE cohort = '" + cohort + "'";
+                cmd.Connection = con;
+                DataTable membersTable = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                con.Open();
+                da.Fill(membersTable);
+                con.Close();
+
+                MailMessage msg = new MailMessage();
+                msg.From = new MailAddress("acabotfki@gmail.com");
+                foreach (DataRow row in membersTable.Rows)
+                    msg.To.Add(row["email_address"].ToString());
+                msg.Subject = subject;
+                msg.Body = body;
+                msg.IsBodyHtml = true;
+                msg.Priority = MailPriority.High;
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network; smtpClient.Credentials = new NetworkCredential("acabotfki@gmail.com", "Q1w2e3r4Acabot");
+                smtpClient.EnableSsl = true;  // use SSL
+                if (msg.To.Count > 0)
+                    smtpClient.Send(msg);
+
+                AnnouncementFunc announcement = new AnnouncementFunc();
+                announcement.AnnouncementId = announcement_id;
+                announcement.Status = "sent";
+                announcement.UpdateAnnouncementStatus(ConnectionString, announcement);
+
+                announcement_GridView.DataBind();
+                SentAnnouncement_GridView.DataBind();
             }
         }
 
@@ -91,7 +130,6 @@ namespace Academic_Chatbot
             con.Open();
             da.Fill(membersTable);
             con.Close();
-
 
             MailMessage msg = new MailMessage();
             msg.From = new MailAddress("acabotfki@gmail.com");
@@ -126,5 +164,7 @@ namespace Academic_Chatbot
 
             SentAnnouncement_GridView.DataBind();
         }
+
+
     }
 }

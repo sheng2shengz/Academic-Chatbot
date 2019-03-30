@@ -179,11 +179,13 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Images\cap.png" />
+    <Content Include="Images\email.png" />
     <Content Include="Images\fci.png" />
     <Content Include="Images\speech-bubble.png" />
     <Content Include="Images\student.png" />
     <Content Include="Images\templatemo_logo.png" />
     <Content Include="Images\UMS.png" />
+    <Content Include="UpdateAnnouncement.aspx" />
     <Content Include="UpdateStudent.aspx" />
     <Content Include="NewStudent.aspx" />
     <Content Include="Student.aspx" />
@@ -303,6 +305,13 @@
     </Compile>
     <Compile Include="Announcement.cs" />
     <Compile Include="Cohort.cs" />
+    <Compile Include="UpdateAnnouncement.aspx.cs">
+      <DependentUpon>UpdateAnnouncement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAnnouncement.aspx.designer.cs">
+      <DependentUpon>UpdateAnnouncement.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UpdateStudent.aspx.cs">
       <DependentUpon>UpdateStudent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

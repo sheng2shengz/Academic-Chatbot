@@ -15,6 +15,7 @@ namespace Academic_Chatbot
         public string Body { get; set; }
         public int CohortID { get; set; }
         public string Status { get; set; }
+        public string Cohort { get; set; }
 
         public void NewAnnouncement(string connectionString, AnnouncementFunc announcement)
         {
@@ -52,10 +53,32 @@ namespace Academic_Chatbot
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add(new SqlParameter("@AnnouncementId", announcement.AnnouncementId));
-                    cmd.Parameters.Add(new SqlParameter("@Type", announcement.Type));
                     cmd.Parameters.Add(new SqlParameter("@Subject", announcement.Subject));
                     cmd.Parameters.Add(new SqlParameter("@Body", announcement.Body));
                     cmd.Parameters.Add(new SqlParameter("@CohortID", announcement.CohortID));
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateAnnouncementStatus(string connectionString, AnnouncementFunc announcement)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("UpdateAnnouncementStatus", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("@AnnouncementId", announcement.AnnouncementId));
+                    cmd.Parameters.Add(new SqlParameter("@Status", announcement.Status));
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -90,11 +113,11 @@ namespace Academic_Chatbot
             }
         }
 
-        public AnnouncementFunc GetAnnouncementData(string connectionString, string AnnouncementId)
+        public AnnouncementFunc GetAnnouncementData(string connectionString, int AnnouncementId)
         {
             SqlConnection con = new SqlConnection(connectionString);
 
-            string SelectSQL = "SELECT announcemnt_id, subject, body FROM announcementView WHERE announcement_id = '" + AnnouncementId + "'";
+            string SelectSQL = "SELECT [announcement_id], [subject], [body], [cohort_ID] FROM announcement WHERE announcement_id = '" + AnnouncementId + "'";
             con.Open();
 
             SqlCommand cmd = new SqlCommand(SelectSQL, con);
@@ -107,7 +130,7 @@ namespace Academic_Chatbot
                     Announcement.AnnouncementId = Convert.ToInt32(dr["announcement_id"]);
                     Announcement.Subject = dr["subject"].ToString();
                     Announcement.Body = dr["body"].ToString();
-                    //Announcement.CohortID = dr["name"].ToString();
+                    Announcement.CohortID = Convert.ToInt32(dr["cohort_ID"].ToString());
                 }
             }
             return Announcement;
