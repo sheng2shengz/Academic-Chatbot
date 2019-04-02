@@ -7,5 +7,4 @@
         </div>
         <div class="col"></div>
     </div>
-
 </asp:Content>
