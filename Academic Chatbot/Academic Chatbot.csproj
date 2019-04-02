@@ -305,6 +305,9 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="Announcement.cs" />
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Cohort.cs" />
     <Compile Include="UpdateAnnouncement.aspx.cs">
       <DependentUpon>UpdateAnnouncement.aspx</DependentUpon>

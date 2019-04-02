@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ADmin.Master" AutoEventWireup="true" CodeBehind="Announcement.aspx.cs" Inherits="Academic_Chatbot.Announcement" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin.Master" AutoEventWireup="true" CodeBehind="Announcement.aspx.cs" Inherits="Academic_Chatbot.Announcement" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -36,7 +36,7 @@
         </div>
         <div class="mt-3 row justify-content-center container">
             <asp:Button ID="SaveAnnouncement_Button" CssClass="mx-auto col-4 btn btn-outline-info" OnClick="SaveAnnouncement_Button_Click" text="Save" runat="server" />
-            <asp:Button ID="SendAnnouncement_Button" CssClass="mx-auto col-4 btn btn-outline-primary" OnClick="SendAnnouncement_Button_Click" Text="Send" runat="server" />
+            <asp:Button ID="SendAnnouncement_Button" CssClass="mx-auto col-4 btn btn-outline-primary" OnClick="SendAnnouncement_Button_Click" OnClientClick="return confirm('Send now?')" Text="Send" runat="server" />
         </div>
     </div>
     <hr />
@@ -45,7 +45,7 @@
     </div>
 
     <div class="m-3 mb-5">
-        <asp:GridView ID="announcement_GridView" runat="server" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="True" HeaderStyle-ForeColor="Black" HeaderStyle-CssClass="thead-light" RowStyle-HorizontalAlign="Center" RowStyle-VerticalAlign="Middle" ShowHeaderWhenEmpty="true" EmptyDataText="There is no announcement saved." CssClass="table table-striped table-bordered" HeaderStyle-BorderWidth="1" AllowSorting="True" AutoGenerateColumns="False" OnRowCommand="announcement_GridView_RowCommand" DataKeyNames="announcement_id" DataSourceID="Announcement_SqlDataSource">
+        <asp:GridView ID="announcement_GridView" runat="server" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="True" HeaderStyle-ForeColor="Black" HeaderStyle-CssClass="thead-light" RowStyle-HorizontalAlign="Center" RowStyle-VerticalAlign="Middle" ShowHeaderWhenEmpty="true" EmptyDataText="There is no announcement saved." CssClass="table table-striped table-bordered" HeaderStyle-BorderWidth="1" AllowSorting="True" AutoGenerateColumns="False" OnRowCommand="announcement_GridView_RowCommand" pre DataKeyNames="announcement_id" DataSourceID="Announcement_SqlDataSource">
             <Columns>
                 <asp:TemplateField ItemStyle-CssClass="text-center col-1">
                     <ItemTemplate>
@@ -60,7 +60,7 @@
                 <asp:BoundField DataField="cohort" HeaderText="Cohort"  SortExpression="cohort" />
                 <asp:TemplateField ItemStyle-CssClass="text-center col-1">
                     <ItemTemplate>
-                        <asp:Button Text="Send" CssClass="btn btn-sm btn-primary" CommandName="SendCommand" CommandArgument='<%#Eval("announcement_id") %>' runat="server" />
+                        <asp:Button Text="Send" CssClass="btn btn-sm btn-primary" CommandName="SendCommand" CommandArgument='<%#Eval("announcement_id") %>' OnClientClick="return confirm('Send now?')" runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

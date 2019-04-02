@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Academic_Chatbot
 {
-    public partial class UpdateUser : System.Web.UI.Page
+    public partial class UpdateUser : BasePage
     {
         int userId = 0;
 
@@ -16,6 +16,8 @@ namespace Academic_Chatbot
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userType"] == null)
+                Response.Redirect("Login.aspx");
             if (Request.QueryString["user_id"] != "")
             {
                 userId = Convert.ToInt16(Request.QueryString["user_id"]);

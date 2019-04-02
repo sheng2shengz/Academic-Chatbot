@@ -8,13 +8,15 @@ using System.Web.UI.WebControls;
 
 namespace Academic_Chatbot
 {
-    public partial class UpdateStudent : System.Web.UI.Page
+    public partial class UpdateStudent : BasePage
     {
         string OldStudentId, NewStudentId;
         public string ConnectionString = WebConfigurationManager.ConnectionStrings["academic_chatbotConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userType"] == null)
+                Response.Redirect("Login.aspx");
             if (Request.QueryString["student_id"] != "")
             {
                 OldStudentId = Request.QueryString["student_id"].ToString();

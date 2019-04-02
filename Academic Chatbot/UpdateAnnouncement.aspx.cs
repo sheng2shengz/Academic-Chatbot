@@ -8,13 +8,15 @@ using System.Web.UI.WebControls;
 
 namespace Academic_Chatbot
 {
-    public partial class UpdateAnnouncement : System.Web.UI.Page
+    public partial class UpdateAnnouncement : BasePage
     {
         public string ConnectionString = WebConfigurationManager.ConnectionStrings["academic_chatbotConnectionString"].ConnectionString;
         int announcementId = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userType"] == null)
+                Response.Redirect("Login.aspx");
             if (Request.QueryString["announcement_id"] != "")
                 announcementId = Convert.ToInt16(Request.QueryString["announcement_id"]);
             else
@@ -27,7 +29,6 @@ namespace Academic_Chatbot
 
         private void FillAnnouncementData()
         {
-            UserFunc user = new UserFunc();
             AnnouncementFunc Announcement = new AnnouncementFunc();
             Announcement = Announcement.GetAnnouncementData(ConnectionString, announcementId);
 

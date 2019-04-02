@@ -12,28 +12,41 @@ using System.Data;
 
 namespace Academic_Chatbot
 {
-    public partial class Announcement : System.Web.UI.Page
+    public partial class Announcement : BasePage
     {
         public string ConnectionString = WebConfigurationManager.ConnectionStrings["academic_chatbotConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Master.ToString() == "ASP.admin_master")
+            if (Session["userType"] == null)
+                Response.Redirect("Login.aspx");
+
+            if (Session["userType"].ToString() == "1")
             {
+                SentAnnouncement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'sent'";
+                Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'saved'";
                 type_Label.Visible = true;
                 type_Dropdownlist.Visible = true;
+                announcement_GridView.DataBind();
+                SentAnnouncement_GridView.DataBind();
             }
-            else if (Master.ToString() == "ASP.fyp_master")
+            else if (Session["userType"].ToString() == "2")
             {
-                Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE name = 'FYP'";
+                SentAnnouncement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'sent' AND name = 'FYP'";
+                Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'saved' AND name = 'FYP'";
                 type_Label.Visible = false;
                 type_Dropdownlist.Visible = false;
+                announcement_GridView.DataBind();
+                SentAnnouncement_GridView.DataBind();
             }
-            else if (Master.ToString() == "ASP.li_master")
+            else if (Session["userType"].ToString() == "3")
             {
-                 Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE name = 'LI'";
+                SentAnnouncement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'sent' AND name = 'LI'";
+                Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'saved' AND name = 'LI'";
                 type_Label.Visible = false;
                 type_Dropdownlist.Visible = false;
+                announcement_GridView.DataBind();
+                SentAnnouncement_GridView.DataBind();
             }
         }
 
@@ -43,19 +56,18 @@ namespace Academic_Chatbot
             announcement.Subject = subject_TextBox.Text;
             announcement.Body = body_TextBox.Text;
             announcement.CohortID = Int32.Parse(Cohort_DropDownList.SelectedValue.ToString());
-            if (Master.ToString() == "ASP.FYP_master")
+            if (Session["userType"].ToString() == "2")
                 announcement.Type = "FYP";
-            else if (Master.ToString() == "ASP.LI_master")
+            else if (Session["userType"].ToString() == "3")
                 announcement.Type = "LI";
-            else if (Master.ToString() == "ASP.admin_master")
+            else if (Session["userType"].ToString() == "1")
                 announcement.Type = type_Dropdownlist.SelectedValue;
+            subject_TextBox.Text = "";
+            body_TextBox.Text = "";
             announcement.Status = "saved";
-
             announcement.NewAnnouncement(ConnectionString, announcement);
-
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
             upModal.Update();
-
             announcement_GridView.DataBind();
         }
 
@@ -149,22 +161,21 @@ namespace Academic_Chatbot
             announcement.Subject = subject_TextBox.Text;
             announcement.Body = body_TextBox.Text;
             announcement.CohortID = Int32.Parse(Cohort_DropDownList.SelectedValue.ToString());
-            if (Master.ToString() == "ASP.FYP_master")
+            if (Session["userType"].ToString() == "2")
                 announcement.Type = "FYP";
-            else if (Master.ToString() == "ASP.LI_master")
+            else if (Session["userType"].ToString() == "3")
                 announcement.Type = "LI";
-            else if (Master.ToString() == "ASP.admin_master")
+            else if (Session["userType"].ToString() == "1")
                 announcement.Type = type_Dropdownlist.SelectedValue;
             announcement.Status = "sent";
 
             announcement.NewAnnouncement(ConnectionString, announcement);
-
+            subject_TextBox.Text = "";
+            body_TextBox.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "sentModal", "$('#sentModal').modal();", true);
             upModal.Update();
 
             SentAnnouncement_GridView.DataBind();
         }
-
-
     }
 }

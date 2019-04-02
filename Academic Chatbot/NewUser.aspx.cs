@@ -9,11 +9,12 @@ using System.Web.UI.WebControls;
 
 namespace Academic_Chatbot
 {
-    public partial class NewUser : Page
+    public partial class NewUser : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["userType"] == null)
+                Response.Redirect("Login.aspx");
         }
 
         protected void back_ImageButton_OnClick(object sender, EventArgs e)

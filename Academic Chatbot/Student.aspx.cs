@@ -9,12 +9,14 @@ using System.Web.UI.WebControls;
 
 namespace Academic_Chatbot
 {
-    public partial class Student : System.Web.UI.Page
+    public partial class Student : BasePage
     {
         public string ConnectionString = WebConfigurationManager.ConnectionStrings["academic_chatbotConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userType"] == null)
+                Response.Redirect("Login.aspx");
             NoOfStudent_Label.Text = Convert.ToString(CountStudent());
             NoOfCohort_Label.Text = Convert.ToString(CountCohort());
         }

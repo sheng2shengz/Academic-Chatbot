@@ -13,6 +13,42 @@ namespace Academic_Chatbot {
     public partial class AdminMaster {
         
         /// <summary>
+        /// Greeting_Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Greeting_Label;
+        
+        /// <summary>
+        /// Title_Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Title_Label;
+        
+        /// <summary>
+        /// FirstName_Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FirstName_Label;
+        
+        /// <summary>
+        /// LastName_Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LastName_Label;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

@@ -9,12 +9,14 @@ using System.Web.UI.WebControls;
 
 namespace Academic_Chatbot
 {
-    public partial class User : System.Web.UI.Page
+    public partial class User : BasePage
     {
         public string ConnectionString = WebConfigurationManager.ConnectionStrings["academic_chatbotConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userType"] == null)
+                Response.Redirect("Login.aspx");
             no_of_users.Text = User_GridView.Rows.Count.ToString();
             NoOfAdmin_Label.Text = Convert.ToString(CountAdmin());
             NoOfFYPCoordinator_Label.Text = Convert.ToString(CountFYPCoordinator());
