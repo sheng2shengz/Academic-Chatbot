@@ -180,6 +180,7 @@
     <Content Include="About.aspx" />
     <Content Include="Images\cap.png" />
     <Content Include="Images\email.png" />
+    <Content Include="Images\fci-transparent.png" />
     <Content Include="Images\fci.png" />
     <Content Include="Images\speech-bubble.png" />
     <Content Include="Images\student.png" />
