@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Academic_Chatbot
 {
-    public partial class Knowledgebase : System.Web.UI.Page
+    public partial class Knowledgebase : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
