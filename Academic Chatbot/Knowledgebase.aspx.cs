@@ -11,7 +11,8 @@ namespace Academic_Chatbot
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["userType"] == null)
+                Response.Redirect("Login.aspx");
         }
 
         protected void Edit_LinkButton_Click(object sender, EventArgs e)
