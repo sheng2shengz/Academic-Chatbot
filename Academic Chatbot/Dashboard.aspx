@@ -7,20 +7,44 @@
             <h2>Dashboard</h2>
         </div>
         <hr />
-        <div class="row">
-            <div id="curve_chart" class="col-4"></div>
-            <div id="tag_cloud" class="col-4 text-center">
-                <h5>hello</h5>
-                <h6>hi</h6>
-                <h3>FYP</h3>
-                <h4>LI</h4>
-                <h5>Internship</h5>
-                <h2>How</h2>
+        <div class="row" style="height: 200px">
+            <div id="lipiechart" class="col-4 border-bottom"></div>
+            <div class="col-4 row align-items-center text-center">
+                <asp:Label ID="C2016" runat="server" Visible="True">
+                    <asp:Label runat="server" Font-Bold="true">Cohort 2016</asp:Label>&nbsp;has been updated at&nbsp;<asp:Label ID="C2016date" runat="server" Font-Bold="true"><%: DateTime.Now.Date.Day %>/<%: DateTime.Now.Date.Month %>/<%: DateTime.Now.Date.Year %></asp:Label>.
+                </asp:Label>    
+                <asp:Label ID="C20182019" runat="server" Visible="False">
+                    <asp:Label runat="server" Font-Bold="true">Cohort 2016</asp:Label>&nbsp;has been updated at&nbsp;<asp:Label ID="C20182019date" runat="server" Font-Bold="true"><%: DateTime.Now.Date.Day %>/<%: DateTime.Now.Date.Month %>/<%: DateTime.Now.Date.Year %></asp:Label>.
+                </asp:Label>            
+                <asp:Label ID="C2017" runat="server" Visible="False">
+                    <asp:Label runat="server" Font-Bold="true">Cohort 2016</asp:Label>&nbsp;has been updated at&nbsp;<asp:Label ID="C2017date" runat="server" Font-Bold="true"><%: DateTime.Now.Date.Day %>/<%: DateTime.Now.Date.Month %>/<%: DateTime.Now.Date.Year %></asp:Label>.
+                </asp:Label>  
+                <asp:Label ID="C2018" runat="server" Visible="False">
+                    <asp:Label runat="server" Font-Bold="true">Cohort 2016</asp:Label>&nbsp;has been updated at&nbsp;<asp:Label ID="C2018date" runat="server" Font-Bold="true"><%: DateTime.Now.Date.Day %>/<%: DateTime.Now.Date.Month %>/<%: DateTime.Now.Date.Year %></asp:Label>.
+                </asp:Label>  
+                <asp:Label ID="C2019" runat="server" Visible="False">
+                    <asp:Label runat="server" Font-Bold="true">Cohort 2016</asp:Label>&nbsp;has been updated at&nbsp;<asp:Label ID="C2019date" runat="server" Font-Bold="true"><%: DateTime.Now.Date.Day %>/<%: DateTime.Now.Date.Month %>/<%: DateTime.Now.Date.Year %></asp:Label>.
+                </asp:Label>  
+                <asp:Label ID="C2020" runat="server" Visible="False">
+                    <asp:Label runat="server" Font-Bold="true">Cohort 2016</asp:Label>&nbsp;has been updated at&nbsp;<asp:Label ID="C2020date" runat="server" Font-Bold="true"><%: DateTime.Now.Date.Day %>/<%: DateTime.Now.Date.Month %>/<%: DateTime.Now.Date.Year %></asp:Label>.
+                </asp:Label>  
+                <asp:Label ID="C2021" runat="server" Visible="False">
+                    <asp:Label runat="server" Font-Bold="true">Cohort 2016</asp:Label>&nbsp;has been updated at&nbsp;<asp:Label ID="C2021date" runat="server" Font-Bold="true"><%: DateTime.Now.Date.Day %>/<%: DateTime.Now.Date.Month %>/<%: DateTime.Now.Date.Year %></asp:Label>.
+                </asp:Label>  
+                <asp:Label ID="C2022" runat="server" Visible="False">
+                    <asp:Label runat="server" Font-Bold="true">Cohort 2016</asp:Label>&nbsp;has been updated at&nbsp;<asp:Label ID="C2022date" runat="server" Font-Bold="true"><%: DateTime.Now.Date.Day %>/<%: DateTime.Now.Date.Month %>/<%: DateTime.Now.Date.Year %></asp:Label>.
+                </asp:Label>  
+                <asp:Label ID="C2023" runat="server" Visible="False">
+                    <asp:Label runat="server" Font-Bold="true">Cohort 2016</asp:Label>&nbsp;has been updated at&nbsp;<asp:Label ID="C2023date" runat="server" Font-Bold="true"><%: DateTime.Now.Date.Day %>/<%: DateTime.Now.Date.Month %>/<%: DateTime.Now.Date.Year %></asp:Label>.
+                </asp:Label>  
+                <asp:Label ID="C2024" runat="server" Visible="False">
+                    <asp:Label runat="server" Font-Bold="true">Cohort 2016</asp:Label>&nbsp;has been updated at&nbsp;<asp:Label ID="C2024date" runat="server" Font-Bold="true"><%: DateTime.Now.Date.Day %>/<%: DateTime.Now.Date.Month %>/<%: DateTime.Now.Date.Year %></asp:Label>.
+                </asp:Label>  
             </div>
-            <div id="piechart" class="col-4"></div>
+            <div id="fyppiechart" class="col-4 border-bottom"></div>
         </div>
     </div>
-    <hr />
+    <br />
     <div class="row align-items-center text-center">
         <asp:Label ID="therearecurrently_Label" CssClass="col-4 align-middle" runat="server">There Are Currently:</asp:Label>
         <div class="col-8">
@@ -36,58 +60,39 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawLineChart);
-      function drawLineChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Month', 'User'],
-          ['Jan', 43],
-          ['Feb', 64],
-          ['March', 76],
-          ['April', 12],
-          ['May', 23],
-          ['June', 20],
-          ['July', 56],
-          ['Aug', 15],
-          ['Sept', 33],
-          ['Oct', 90],
-          ['Nov', 45],
-          ['Dec', 100],
-        ]);
-
-          var options = {
-          title: 'User Traffic',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-        chart.draw(data, options);
-    }
-</script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
+      google.charts.setOnLoadCallback(drawFYPChart);
+      google.charts.setOnLoadCallback(drawLIChart);
+      function drawFYPChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Type', 'No.'],
-          ['1',     11],
-          ['2',      2],
-          ['3',  2],
-          ['4', 2],
-          ['5',    7]
+          ['Status', 'No.'],
+          ['Sent',     11],
+          ['Saved',      2],
         ]);
 
         var options = {
-          title: 'Pie Chart'
+          title: 'FYP Announcement'
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart = new google.visualization.PieChart(document.getElementById('fyppiechart'));
 
         chart.draw(data, options);
-      }
+    }
+      function drawLIChart() {
+
+            var data = google.visualization.arrayToDataTable([
+              ['Status', 'No.'],
+              ['Sent',     5],
+              ['Saved',      8],
+            ]);
+
+            var options = {
+              title: 'LI Announcement'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('lipiechart'));
+
+            chart.draw(data, options);
+          }
     </script>
 </asp:Content>
