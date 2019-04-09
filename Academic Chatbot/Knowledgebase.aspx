@@ -5,15 +5,50 @@
             <h2>Chatbot Configuration</h2>
     </div>
     <hr />
-    <div class="jumbotron py-4 shadow">
-        <div class="mx-5 row justify-content-between">
-            <asp:Button ID="NewKB_Button" CssClass="btn btn-primary" Text="New KB" runat="server" />
-            <asp:Button ID="TrainPublish_Button" CssClass="btn btn-primary" Text="Train & Publish" runat="server" />
-            <asp:Button ID="ChatLog_Button" CssClass="btn btn-primary" Text="Chat Log" OnClick="ChatLog_Button_Click" runat="server" />
+    <div class="row align-items-center justify-content-center mt-4">
+        <asp:Label CssClass="text-center font-weight-bold h4" runat="server">COHORT:&nbsp;</asp:Label>
+        <asp:DropDownList CssClass="form-control col-2" runat="server">
+            <asp:ListItem Value="2016">2016</asp:ListItem>
+            <asp:ListItem Value="20182019">2018/2019</asp:ListItem>
+            <asp:ListItem Value="2017">2017</asp:ListItem>
+            <asp:ListItem Value="2018">2018</asp:ListItem>
+            <asp:ListItem Value="2019">2019</asp:ListItem>
+            <asp:ListItem Value="2020">2020</asp:ListItem>
+            <asp:ListItem Value="2021">2021</asp:ListItem>
+            <asp:ListItem Value="2022">2022</asp:ListItem>
+            <asp:ListItem Value="2023">2023</asp:ListItem>
+            <asp:ListItem Value="2024">2024</asp:ListItem>
+        </asp:DropDownList>
+    </div>
+    <div class="row align-items-center justify-content-center">
+        <asp:Label runat="server">Last Updated:</asp:Label><asp:Label ID="lastUpdateDate_Label" runat="server"></asp:Label>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron shadow pt-2 text-center pb-2 mx-2">
+                <div style="display: table-cell">
+                    <h5 class="mt-0 font-weight-bold">FYP</h5>
+                    <h6 class="font-weight-light font-italic">Note: Update the <b>FYP</b> timeline pdf/image for the selected cohort here.</h6>
+                    <br />
+                    <asp:FileUpload CssClass="row" runat="server" />
+                    <br />
+                    <asp:Button class="align-content-bottom btn btn-info" Text="Update" runat="server" />
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="jumbotron shadow pt-2 text-center pb-2 mx-2">
+                <div style="display: table-cell">
+                    <h5 class="mt-0 font-weight-bold">LI</h5>
+                    <h6 class="font-weight-light font-italic">Note: Update the <b>LI</b> timeline pdf/image for the selected cohort here.</h6>
+                    <br />
+                    <asp:FileUpload CssClass="row" runat="server" />
+                    <br />
+                    <asp:Button class="align-content-bottom btn btn-info" Text="Update" runat="server" />
+                </div>
+            </div>
         </div>
     </div>
-    <hr />
-
     <!-- Bootstrap Modal Dialog -->
     <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
