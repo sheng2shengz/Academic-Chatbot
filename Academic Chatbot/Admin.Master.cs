@@ -27,16 +27,17 @@ namespace Academic_Chatbot
             TimeSpan Morning11 = new TimeSpan(11, 59, 59);
             TimeSpan Afternoon4 = new TimeSpan(16, 59, 59);
             TimeSpan now = DateTime.Now.TimeOfDay;
+
             if ((now >= Morning4) && (now <= Morning11))
             {
-                return DateTime.Now.TimeOfDay.ToString();
+                return "Good Morning";
             }
             else if ((now > Morning11) && (now <= Afternoon4))
             {
-                return DateTime.Now.TimeOfDay.ToString();
+                return "Good Afternoon";
             }
             else
-                return DateTime.Now.TimeOfDay.ToString();
+                return "Good Evening";
         }
 
         public string GetTitle()
