@@ -36,7 +36,7 @@ namespace Academic_Chatbot
 
         protected void SignIn_Button_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-AR8MJRC\SQLEXPRESS;Initial Catalog=academic_chatbot;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=SQL5041.site4now.net;Initial Catalog=DB_A47792_1234;User Id=DB_A47792_1234_admin;Password=Q1w2e3r4;");
             string encrypt_passwordinput = MD5Encrypt(Password_TextBox.Text);
             string query = "SELECT email_address, passwordhash FROM [user] WHERE email_address ='" + EmailAddress_TextBox.Text + "'AND passwordhash ='" + encrypt_passwordinput + "'";
             string userType = "SELECT role_ID FROM [user] WHERE email_address ='" + EmailAddress_TextBox.Text + "'AND passwordhash ='" + encrypt_passwordinput + "'";

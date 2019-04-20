@@ -7,7 +7,7 @@
     <hr />
     <div class="row align-items-center justify-content-center mt-4">
         <asp:Label CssClass="text-center font-weight-bold h4" runat="server">COHORT:&nbsp;</asp:Label>
-        <asp:DropDownList CssClass="form-control col-2" runat="server">
+        <asp:DropDownList ID="cohort_dropdownlist" CssClass="form-control col-2" runat="server">
             <asp:ListItem Value="2016">2016</asp:ListItem>
             <asp:ListItem Value="20182019">2018/2019</asp:ListItem>
             <asp:ListItem Value="2017">2017</asp:ListItem>
@@ -20,55 +20,85 @@
             <asp:ListItem Value="2024">2024</asp:ListItem>
         </asp:DropDownList>
     </div>
-    <div class="row align-items-center justify-content-center">
-        <asp:Label runat="server">Last Updated:</asp:Label><asp:Label ID="lastUpdateDate_Label" runat="server"></asp:Label>
+<%--    <div id="fyp_lastupdated" class="row align-items-center justify-content-center" runat="server">
+        <asp:Label runat="server">Last Updated(FYP):</asp:Label><asp:Label ID="FYPlastUpdateDate_Label" runat="server"></asp:Label>
     </div>
+    <div id="li_lastupdated" class="row align-items-center justify-content-center" runat="server">
+        <asp:Label runat="server">Last Updated(LI):</asp:Label><asp:Label ID="LIlastUpdateDate_Label" runat="server"></asp:Label>
+    </div>--%>
     <div class="row">
-        <div class="col">
+        <div id="left_div" class="col-3" runat="server"></div>
+        <div class="col" id="FYP_div" runat="server">
             <div class="jumbotron shadow pt-2 text-center pb-2 mx-2">
                 <div style="display: table-cell">
                     <h5 class="mt-0 font-weight-bold">FYP</h5>
-                    <h6 class="font-weight-light font-italic">Note: Update the <b>FYP</b> timeline pdf/image for the selected cohort here.</h6>
+                    <h6 class="font-weight-light font-italic">Note: Update the <b>FYP</b> timeline pdf file for the selected cohort here.</h6>
                     <br />
-                    <asp:FileUpload CssClass="row" runat="server" />
+                    <asp:FileUpload ID="FYP_FileUpload" CssClass="row" runat="server" />
                     <br />
-                    <asp:Button class="align-content-bottom btn btn-info" Text="Update" runat="server" />
+                    <asp:Button ID="UpdateFYP_Button" class="align-content-bottom btn btn-info" Text="Update" OnClick="UpdateFYP_Button_Click" runat="server" />
+                    <div class="row-12 text-center">
+                        <asp:RegularExpressionValidator ID="FYP_FileUpload_RegularExpressionValidator" ForeColor="Red" runat="server" ControlToValidate="FYP_FileUpload" ValidationExpression="^([a-zA-Z].*|[1-9].*)\.(((p|P)(d|D)(f|F)))$">PDF file required</asp:RegularExpressionValidator>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col" id="LI_div" runat="server">
             <div class="jumbotron shadow pt-2 text-center pb-2 mx-2">
                 <div style="display: table-cell">
                     <h5 class="mt-0 font-weight-bold">LI</h5>
-                    <h6 class="font-weight-light font-italic">Note: Update the <b>LI</b> timeline pdf/image for the selected cohort here.</h6>
+                    <h6 class="font-weight-light font-italic">Note: Update the <b>LI</b> timeline pdf file for the selected cohort here.</h6>
                     <br />
-                    <asp:FileUpload CssClass="row" runat="server" />
+                    <asp:FileUpload ID="LI_FileUpload" AllowMultiple="false" CssClass="row" runat="server" />
                     <br />
-                    <asp:Button class="align-content-bottom btn btn-info" Text="Update" runat="server" />
+                    <asp:Button ID="UpdateLI_Button" class="align-content-bottom btn btn-info" Text="Update" OnClick="UpdateLI_Button_Click" runat="server" />
+                    <div class="row-12 text-center">
+                        <asp:RegularExpressionValidator ID="LI_FileUpload_ReGexValidator" ForeColor="Red" runat="server" ControlToValidate="LI_FileUpload" ValidationExpression="^([a-zA-Z].*|[1-9].*)\.(((p|P)(d|D)(f|F)))$">PDF file required</asp:RegularExpressionValidator>
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="right_div" class="col-3" runat="server"></div>
     </div>
-    <!-- Bootstrap Modal Dialog -->
     <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <asp:UpdatePanel ID="upModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
-            <ContentTemplate>
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title"><asp:Label ID="lblModalTitle" runat="server" Text="Cohort 2016 FYP KB"></asp:Label></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <div class="modal-dialog">
+            <asp:UpdatePanel ID="upModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="modal-content">
+                        <div class="modal-header ">
+                            <h4 class="modal-title mx-auto"><asp:Label ID="lblModalTitle" runat="server" Text="File Updated!"></asp:Label></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body text-center mx-auto">
+                            <div class="row mb-4">
+                                <asp:Label Text="File has been successfully uploaded & chatbot has been updated." runat="server"></asp:Label>
+                            </div>
+                            <asp:Button ID="continue_button" Text="Continue" CssClass="col-4 btn btn-light" BorderColor="Black" OnClick="continue_button_Click" runat="server" />
+                        </div>
                     </div>
-                    <div class="modal-body mx-auto">
-                        <asp:Button Text="Add Entry" CssClass=" btn btn-success" OnClick="Unnamed_Click" runat="server" />
-                        <asp:Button Text="Delete Entry" CssClass=" btn btn-danger" OnClick="Unnamed_Click1" runat="server" />
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
-                    </div>
-                </div>
-            </ContentTemplate>
-        </asp:UpdatePanel>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
     </div>
-</div>
+
+    <div class="modal fade" id="myModal1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="modal-content">
+                        <div class="modal-header ">
+                            <h4 class="modal-title mx-auto"><asp:Label ID="Label1" runat="server" Text="No file found!"></asp:Label></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body text-center mx-auto">
+                            <div class="row mb-4">
+                                <asp:Label Text="No file found." runat="server"></asp:Label>
+                            </div>
+                            <asp:Button ID="Button1" Text="Continue" CssClass="btn btn-light" BorderColor="Black" OnClick="continue_button_Click" runat="server" />
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
 </asp:Content>

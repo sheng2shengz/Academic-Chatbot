@@ -20,8 +20,9 @@ namespace Academic_Chatbot
         {
             if (Session["userType"] == null)
                 Response.Redirect("Login.aspx");
-
-            if (Session["userType"].ToString() == "1")
+            if (!Page.IsPostBack)
+            {
+                if (Session["userType"].ToString() == "1")
             {
                 SentAnnouncement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'sent'";
                 Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'saved'";
@@ -30,23 +31,24 @@ namespace Academic_Chatbot
                 announcement_GridView.DataBind();
                 SentAnnouncement_GridView.DataBind();
             }
-            else if (Session["userType"].ToString() == "2")
-            {
-                SentAnnouncement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'sent' AND name = 'FYP'";
-                Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'saved' AND name = 'FYP'";
-                type_Label.Visible = false;
-                type_Dropdownlist.Visible = false;
-                announcement_GridView.DataBind();
-                SentAnnouncement_GridView.DataBind();
-            }
-            else if (Session["userType"].ToString() == "3")
-            {
-                SentAnnouncement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'sent' AND name = 'LI'";
-                Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'saved' AND name = 'LI'";
-                type_Label.Visible = false;
-                type_Dropdownlist.Visible = false;
-                announcement_GridView.DataBind();
-                SentAnnouncement_GridView.DataBind();
+                else if (Session["userType"].ToString() == "2")
+                {
+                    SentAnnouncement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'sent' AND name = 'FYP'";
+                    Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'saved' AND name = 'FYP'";
+                    type_Label.Visible = false;
+                    type_Dropdownlist.Visible = false;
+                    announcement_GridView.DataBind();
+                    SentAnnouncement_GridView.DataBind();
+                }
+                else if (Session["userType"].ToString() == "3")
+                {
+                    SentAnnouncement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'sent' AND name = 'LI'";
+                    Announcement_SqlDataSource.SelectCommand = "SELECT * FROM [announcementView] WHERE status = 'saved' AND name = 'LI'";
+                    type_Label.Visible = false;
+                    type_Dropdownlist.Visible = false;
+                    announcement_GridView.DataBind();
+                    SentAnnouncement_GridView.DataBind();
+                }
             }
         }
 
