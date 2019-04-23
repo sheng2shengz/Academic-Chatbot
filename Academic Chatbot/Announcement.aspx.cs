@@ -91,7 +91,7 @@ namespace Academic_Chatbot
             {
                 int announcement_id = Convert.ToInt32(e.CommandArgument.ToString());
                 AnnouncementFunc Announcement = new AnnouncementFunc();
-                Announcement = Announcement.GetAnnouncementData(ConnectionString, announcement_id);
+                Announcement = Announcement.GetAnnouncementData2(ConnectionString, announcement_id);
 
                 string subject = Announcement.Subject;
                 string body = Announcement.Body;

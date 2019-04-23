@@ -83,7 +83,7 @@ namespace Academic_Chatbot
                 HttpPostedFile file = Request.Files["LI_FileUpload"];
 
                 string fname = "li_" + cohort_dropdownlist.SelectedValue.ToString() + "timeline.pdf";
-                FYP_FileUpload.SaveAs(Server.MapPath(Path.Combine("~/Timelines_PDF/", fname)));
+                LI_FileUpload.SaveAs(Server.MapPath(Path.Combine("~/Timelines_PDF/", fname)));
 
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
                 upModal.Update();

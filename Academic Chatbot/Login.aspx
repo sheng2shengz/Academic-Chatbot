@@ -8,6 +8,7 @@
             <asp:TextBox ID="EmailAddress_TextBox" CssClass="form-control" TextMode="Email" placeholder="Email address" runat="server"></asp:TextBox>
             <asp:TextBox ID="Password_TextBox" CssClass="form-control" TextMode="Password" PlaceHolder="Password" runat="server"></asp:TextBox>
             <asp:Button ID="SignIn_Button" CssClass="mt-3 btn btn-lg btn-primary btn-block shadow" OnClick="SignIn_Button_Click" Text="Sign In" runat="server" />
+            <asp:Label CssClass="mt-2 font-weight-light h6" runat="server"><em>*Note: Not compatible with mobile devices yet.</em></asp:Label>
         </div>
 
         <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
